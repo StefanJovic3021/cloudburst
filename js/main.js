@@ -37,7 +37,7 @@ $(document).ready(function(){
     CODE BELOW WORKS ONLY IN INDEX.HTML
 */
 
-if (document.location.pathname == "/cloudburst/index.html" || document.location.pathname == "/cloudburst/)
+if (document.location.pathname == "/cloudburst/index.html" || document.location.pathname == "/cloudburst/")
 {
     //Dynamic Search Checkboxes
     let searchCb = document.querySelector("#checkDomains");
