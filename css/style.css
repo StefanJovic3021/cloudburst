@@ -1,0 +1,841 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Anurati;
+  src: url("/files/fonts/Anurati-Regular.otf");
+}
+::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.768627451);
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.768627451);
+  opacity: 1;
+}
+::placeholder {
+  color: rgba(255, 255, 255, 0.768627451);
+  opacity: 1;
+}
+
+.nav-button {
+  padding: 6px 20px;
+  margin: 0px 10px;
+  font-size: 14px;
+}
+
+.active {
+  color: #0095ff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.selected {
+  background-color: #ffffff;
+}
+.selected p {
+  color: #0095ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.regularContainer {
+  padding: 120px 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.service {
+  background-color: #F7F7F7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 30px;
+  margin: 0px 15px 30px 15px;
+  width: 30%;
+}
+
+.serviceContentIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 30px;
+  background-color: #0071c2;
+  border-radius: 50px;
+  font-size: 60px;
+  color: #ffffff;
+}
+
+.serviceContentName {
+  color: #1E1E1E;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.serviceContentDescription {
+  color: #7e7e7e;
+}
+
+.plan {
+  background-color: #ffffff;
+  color: #1E1E1E;
+  margin: 15px;
+  padding: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px -2px 10px 5px rgba(0, 0, 0, 0.2);
+}
+.plan .planName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.plan .planName p {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.plan .planName .price {
+  padding: 30px 75px;
+  background-color: #0071c2;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.plan .planName .price p {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.plan .planName .price span {
+  font-size: 15px;
+  font-weight: bold;
+}
+.plan .planDescription {
+  padding: 10px 10px 30px 10px;
+  margin-top: 20px;
+  border-bottom: 1px solid #EEEEEE;
+}
+.plan .planDescription p {
+  font-size: 15px;
+  color: #7e7e7e;
+  text-align: center;
+}
+.plan .planAttributes {
+  margin: 10px 0px;
+}
+.plan .planAttributes ul {
+  list-style-type: none;
+}
+.plan .planAttributes ul li {
+  padding: 12px;
+}
+.plan .planAttributes ul li i {
+  color: #0071c2;
+  font-size: 22px;
+}
+.plan a {
+  position: absolute;
+  bottom: -10px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
+}
+.plan a .select-plan-button {
+  background-color: #0071c2;
+  padding: 20px;
+}
+.plan .elementMiddle {
+  background-image: linear-gradient(to right bottom, #042439, #042841, #052d48, #073150, #0a3658, #093a5d, #083e61, #064266, #024768, #014b6a, #03506b, #08546c);
+}
+
+.feature {
+  width: 45%;
+  margin: 10px;
+  padding: 20px;
+  display: flex;
+  box-shadow: -1px 2px 15px 0px rgba(0, 0, 0, 0.15);
+}
+.feature .featureIcon {
+  font-size: 75px;
+  margin-right: 10px;
+  padding-right: 10px;
+}
+.feature .featureIcon i {
+  background-image: linear-gradient(to right bottom, #042439, #042841, #052d48, #073150, #0a3658, #093a5d, #083e61, #064266, #024768, #014b6a, #03506b, #08546c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.feature .featureContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.feature .featureContent .featureName {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1E1E1E;
+  text-align: left;
+  padding-bottom: 10px;
+}
+.feature .featureContent .featureDescription {
+  color: #7e7e7e;
+  text-align: left;
+}
+
+.footerInfoBlock {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  padding: 20px;
+}
+.footerInfoBlock .footerInfoBlockHead {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 30px;
+}
+.footerInfoBlock .footerInfoBlockBody {
+  font-size: 14px;
+}
+.footerInfoBlock .footerInfoBlockBody a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.footerInfoBlock .footerInfoBlockBody ul {
+  list-style-type: none;
+}
+.footerInfoBlock .footerInfoBlockBody li {
+  margin: 13px 0px;
+}
+.footerInfoBlock .footerInfoBlockBody li p {
+  color: rgba(255, 255, 255, 0.768627451);
+}
+.footerInfoBlock .footerInfoBlockBody span {
+  font-weight: bold;
+}
+.footerInfoBlock .footerInfoBlockBody span, .footerInfoBlock .footerInfoBlockBody p {
+  display: inline;
+}
+
+.hidden {
+  display: none;
+}
+
+.radioOption {
+  margin: 10px;
+}
+
+.navWhite {
+  background-color: #ffffff;
+  transition: 0.6s;
+}
+.navWhite #logo a {
+  color: #1E1E1E;
+  transition: 0.6s;
+}
+.navWhite nav a {
+  color: #1E1E1E;
+  transition: 0.6s;
+}
+.navWhite nav .active {
+  color: #0095ff;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: 0.6s;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body header {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: 0.6s;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid rgba(149, 149, 149, 0.6);
+  padding: 15px 250px;
+  position: fixed;
+  z-index: 1;
+  font-size: 16px;
+}
+body header #logo {
+  width: 200px;
+  height: 50px;
+}
+body header #logo a {
+  color: #ffffff;
+  text-decoration: none;
+}
+body header #logo a h1 {
+  font-family: "Anurati";
+  font-size: 22px;
+}
+body header nav {
+  margin-left: 250px;
+}
+body header nav ul {
+  list-style-type: none;
+  display: flex;
+}
+body header nav li {
+  margin: 0px 18px;
+}
+body header nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+body main {
+  /*
+      INDEX PAGE CODE
+  */
+  /*
+      ABOUT US PAGE CODE
+  */
+  /*
+      CONTACT US PAGE CODE
+  */
+  /*
+      ABOUT AUTHOR PAGE CODE
+  */
+}
+body main #bannerContainer {
+  background-image: url("/images/newBack_compressed.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main #bannerContainer #domainSearchContainer {
+  padding: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main #bannerContainer #domainSearchContainer h2 {
+  font-size: 35px;
+  margin-bottom: 50px;
+  color: #ffffff;
+  color: rgb(255, 255, 255);
+  text-shadow: rgb(0, 0, 0) 4px 3px 0px;
+}
+body main #bannerContainer #domainSearchContainer #searchDomain {
+  display: flex;
+  margin-bottom: 30px;
+}
+body main #bannerContainer #domainSearchContainer #searchDomain #domainID {
+  border: 1px solid #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 22px;
+  padding: 5px;
+  color: #ffffff;
+  width: 75%;
+}
+body main #bannerContainer #domainSearchContainer #searchDomain #submitID {
+  background-color: #0071c2;
+  color: #ffffff;
+  border: 2px solid #0071c2;
+  font-size: 18px;
+  padding: 10px;
+  margin-left: 20px;
+}
+body main #bannerContainer #domainSearchContainer #checkDomains {
+  display: flex;
+  font-size: 18px;
+  color: #ffffff;
+}
+body main #bannerContainer #domainSearchContainer #checkDomains input {
+  margin: 0px 20px;
+  width: 18px;
+  height: 18px;
+}
+body main #trustContainer {
+  width: 100%;
+  background-color: #F7F7F7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+body main #trustContainer p {
+  color: #1E1E1E;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+body main #trustContainer #customersContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main #trustContainer #customersContainer .customer {
+  margin: 0px 50px;
+  width: 10%;
+}
+body main #trustContainer #customersContainer .customer img {
+  width: 100%;
+}
+body main #servicesContainer, body main #featuresContainer {
+  width: 60%;
+}
+body main #servicesContainer #servicesHeader, body main #servicesContainer #featuresHeader, body main #featuresContainer #servicesHeader, body main #featuresContainer #featuresHeader {
+  margin-bottom: 30px;
+}
+body main #servicesContainer #servicesHeader span, body main #servicesContainer #featuresHeader span, body main #featuresContainer #servicesHeader span, body main #featuresContainer #featuresHeader span {
+  color: #0071c2;
+  font-weight: bold;
+}
+body main #servicesContainer #servicesHeader h3, body main #servicesContainer #featuresHeader h3, body main #featuresContainer #servicesHeader h3, body main #featuresContainer #featuresHeader h3 {
+  font-size: 32px;
+  color: #1E1E1E;
+  margin: 10px 0px;
+}
+body main #servicesContainer #servicesHeader p, body main #servicesContainer #featuresHeader p, body main #featuresContainer #servicesHeader p, body main #featuresContainer #featuresHeader p {
+  color: #7e7e7e;
+  font-size: 16px;
+  margin: 10px 0px;
+}
+body main #servicesContainer #servicesBody, body main #featuresContainer #servicesBody {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+}
+body main #hostingPlansContainer {
+  width: 100%;
+  height: 1000px;
+}
+body main #hostingPlansContainer #backgroundBanner {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  background-image: url("/images/background_plans.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main #hostingPlansContainer #foregroundSection {
+  position: absolute;
+  width: 60%;
+}
+body main #hostingPlansContainer #foregroundSection #hostingPlansHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding: 50px;
+  text-align: center;
+}
+body main #hostingPlansContainer #foregroundSection #hostingPlansHeader h3 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+body main #hostingPlansContainer #foregroundSection #hostingPlansHeader p {
+  font-size: 16px;
+  width: 70%;
+}
+body main #hostingPlansContainer #foregroundSection #hostingPlansBody {
+  display: flex;
+}
+body main #featuresContainer #featuresBody {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+body main #genericBannerContainer {
+  background-image: url("../images/generic_banner_background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-align: center;
+}
+body main #genericBannerContainer #genericBannerTitle h1 {
+  font-size: 42px;
+  padding: 40px 0px 20px 0px;
+}
+body main #genericBannerContainer #genericBannerTitle p {
+  font-size: 17px;
+  padding: 5px 0px;
+}
+body main #genericBannerContainer #genericBannerTitle p a {
+  color: rgba(255, 255, 255, 0.768627451);
+  text-decoration: none;
+}
+body main #aboutUsContainer {
+  width: 100%;
+  height: 800px;
+  background-color: #F7F7F7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main #aboutUsContainer #aboutUsBox {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+body main #aboutUsContainer #aboutUsBox #aboutUsImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 0px 15px;
+}
+body main #aboutUsContainer #aboutUsBox #aboutUsImage img {
+  width: 90%;
+  height: 90%;
+  border-radius: 5px;
+}
+body main #aboutUsContainer #aboutUsBox #aboutUsContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  padding: 20px;
+}
+body main #aboutUsContainer #aboutUsBox #aboutUsContent #companyBlock {
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #cacaca;
+}
+body main #aboutUsContainer #aboutUsBox #aboutUsContent #companyBlock span {
+  color: #0071c2;
+  font-weight: bold;
+}
+body main #aboutUsContainer #aboutUsBox #aboutUsContent #companyBlock h2 {
+  font-size: 32px;
+  color: #1E1E1E;
+  margin: 10px 0px;
+}
+body main #aboutUsContainer #aboutUsBox #aboutUsContent #companyBlock p {
+  color: #7e7e7e;
+  font-size: 15px;
+  margin: 10px 0px;
+}
+body main #aboutUsContainer #aboutUsBox #aboutUsContent #contextSelector ul {
+  display: flex;
+  list-style-type: none;
+}
+body main #aboutUsContainer #aboutUsBox #aboutUsContent #contextSelector ul li {
+  padding: 15px 20px;
+  color: #1E1E1E;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+}
+body main #aboutUsContainer #aboutUsBox #aboutUsContent #contextTextBlock {
+  width: 100%;
+  padding: 10px 20px;
+  color: #7e7e7e;
+  background-color: #ffffff;
+}
+body main #meetUsContainer {
+  width: 100%;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main #meetUsContainer #meetUsBox {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+body main #meetUsContainer #meetUsBox #meetUsBoxHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+body main #meetUsContainer #meetUsBox #meetUsBoxHeader span {
+  color: #0071c2;
+  font-weight: bold;
+}
+body main #meetUsContainer #meetUsBox #meetUsBoxHeader h3 {
+  font-size: 32px;
+  color: #1E1E1E;
+  margin: 10px 0px;
+}
+body main #meetUsContainer #meetUsBox #meetUsBoxHeader p {
+  width: 60%;
+  color: #7e7e7e;
+  font-size: 16px;
+  margin: 10px 0px;
+}
+body main #meetUsContainer #meetUsBox #meetUsBoxBody {
+  display: flex;
+  justify-content: space-around;
+}
+body main #meetUsContainer #meetUsBox #meetUsBoxBody .colleague {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  background-color: #F7F7F7;
+}
+body main #meetUsContainer #meetUsBox #meetUsBoxBody .colleague .colleagueProfilePic {
+  width: 300px;
+  height: 300px;
+}
+body main #meetUsContainer #meetUsBox #meetUsBoxBody .colleague .colleagueProfilePic img {
+  width: 100%;
+  height: 100%;
+}
+body main #meetUsContainer #meetUsBox #meetUsBoxBody .colleague .colleagueInfo {
+  padding: 20px;
+  text-align: center;
+}
+body main #meetUsContainer #meetUsBox #meetUsBoxBody .colleague .colleagueInfo .colleagueFullName {
+  padding: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #1E1E1E;
+}
+body main #meetUsContainer #meetUsBox #meetUsBoxBody .colleague .colleagueInfo .colleagueRole {
+  padding: 5px;
+  color: #0071c2;
+  font-size: 15px;
+}
+body main #contactContainer {
+  width: 60%;
+  display: flex;
+}
+body main #contactContainer #formHolder {
+  width: 50%;
+  text-align: left;
+  padding: 20px 70px 20px 0px;
+}
+body main #contactContainer #formHolder form {
+  width: 100%;
+}
+body main #contactContainer #formHolder form label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1E1E1E;
+}
+body main #contactContainer #formHolder form input, body main #contactContainer #formHolder form textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  padding: 12px 5px;
+  font-size: 18px;
+  border: 1px solid #cdcdcd;
+  margin: 5px 0px 15px 0px;
+  color: #1E1E1E;
+}
+body main #contactContainer #formHolder form input[type=radio] {
+  width: initial;
+  max-width: initial;
+  min-width: initial;
+}
+body main #contactContainer #formHolder form #submitButton, body main #contactContainer #formHolder form #resetButton {
+  width: initial;
+  max-width: initial;
+  min-width: initial;
+  background-color: #0071c2;
+  padding: 15px;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+}
+body main #contactContainer #formHolder form textarea {
+  height: 120px;
+  resize: none;
+  overflow: auto;
+}
+body main #contactContainer #formHolder form ::-moz-placeholder {
+  color: #a7a7a7;
+  opacity: 1;
+}
+body main #contactContainer #formHolder form :-ms-input-placeholder {
+  color: #a7a7a7;
+  opacity: 1;
+}
+body main #contactContainer #formHolder form ::placeholder {
+  color: #a7a7a7;
+  opacity: 1;
+}
+body main #contactContainer #contactInfoHolder {
+  width: 50%;
+  padding: 20px;
+}
+body main #contactContainer #contactInfoHolder #contactInfoHeader {
+  text-align: left;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #cacaca;
+}
+body main #contactContainer #contactInfoHolder #contactInfoHeader span {
+  color: #0071c2;
+  font-weight: bold;
+}
+body main #contactContainer #contactInfoHolder #contactInfoHeader h3 {
+  font-size: 32px;
+  color: #1E1E1E;
+  margin: 10px 0px;
+}
+body main #contactContainer #contactInfoHolder #contactInfoHeader p {
+  color: #7e7e7e;
+  font-size: 16px;
+  margin: 10px 0px;
+}
+body main #contactContainer #contactInfoHolder #contactInfoIcons {
+  width: 100%;
+  padding: 30px 0px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+body main #contactContainer #contactInfoHolder #contactInfoIcons .contactInfo {
+  margin: 20px 0px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main #contactContainer #contactInfoHolder #contactInfoIcons .contactInfo .contactInfoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background-color: #0071c2;
+  border-radius: 35px;
+  font-size: 45px;
+  color: #ffffff;
+}
+body main #contactContainer #contactInfoHolder #contactInfoIcons .contactInfo .contactInfoText {
+  margin: 10px 0px;
+  font-size: 17px;
+  font-weight: bold;
+}
+body main #aboutAuthorContainer {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main #aboutAuthorContainer #aboutAuthorHead {
+  margin-bottom: 65px;
+}
+body main #aboutAuthorContainer #aboutAuthorHead span {
+  color: #0071c2;
+  font-weight: bold;
+}
+body main #aboutAuthorContainer #aboutAuthorHead h3 {
+  font-size: 32px;
+  color: #1E1E1E;
+  margin: 10px 0px;
+}
+body main #aboutAuthorContainer #aboutAuthorHead p {
+  color: #7e7e7e;
+  font-size: 16px;
+  margin: 10px 0px;
+}
+body main #aboutAuthorContainer #aboutAuthorBody {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body main #aboutAuthorContainer #aboutAuthorBody #aboutAuthorTextHolder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+body main #aboutAuthorContainer #aboutAuthorBody #aboutAuthorTextHolder #aboutAuthorText {
+  padding: 40px 0px;
+  font-size: 21px;
+  color: #1E1E1E;
+  border-bottom: 2px solid #cacaca;
+}
+body main #aboutAuthorContainer #aboutAuthorBody #aboutAuthorTextHolder #aboutAuthorText a {
+  color: #0071c2;
+  text-decoration: none;
+}
+body main #aboutAuthorContainer #aboutAuthorBody #aboutAuthorTextHolder #documentationDownload {
+  margin: 100px 0px;
+}
+body main #aboutAuthorContainer #aboutAuthorBody #aboutAuthorTextHolder #documentationDownload button {
+  padding: 20px;
+  background-color: #0071c2;
+  color: #ffffff;
+  border: 2px solid #004372;
+  font-size: 18px;
+  border-radius: 6px;
+}
+body main #aboutAuthorContainer #aboutAuthorBody #aboutAuthorImageHolder {
+  width: 50%;
+}
+body main #aboutAuthorContainer #aboutAuthorBody #aboutAuthorImageHolder img {
+  width: 75%;
+  box-shadow: rgb(40, 159, 237) 5px 5px 0px 0px, rgb(95, 184, 255) 10px 10px 0px 0px, rgb(161, 216, 255) 15px 15px 0px 0px, rgb(202, 230, 255) 20px 20px 0px 0px, rgb(225, 238, 255) 25px 25px 0px 0px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+body footer {
+  background-image: url("../images/footer_background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+body footer #footerBlock {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5529411765);
+  width: 62%;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 50px;
+}
+body footer #websiteCopyright {
+  margin-bottom: 30px;
+  font-size: 15px;
+}/*# sourceMappingURL=style.css.map */
