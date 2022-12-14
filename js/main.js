@@ -5,7 +5,7 @@ const navBarText = ["Home", "About us", "Our services", "Contact us", "About aut
 let navBarCode = "<ul>";
 for (let i = 0; i < navBarLinks.length; i++)
 {
-    if (document.location.pathname == navBarLinks[i])
+    if (document.location.pathname == navBarLinks[i] || document.location.pathname == "/cloudburst/")
     {
         navBarCode += `<li><a href="${navBarLinks[i]}" class="active"><p>${navBarText[i]}</p></a></li>`;
     }
