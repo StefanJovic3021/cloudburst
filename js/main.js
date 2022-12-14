@@ -1,6 +1,6 @@
 //Dynamic Navbar
 let navBar = document.querySelector("nav");
-const navBarLinks = ["https://stefanjovic3021.github.io/cloudburst/index.html", "https://stefanjovic3021.github.io/cloudburst/about.html", "https://stefanjovic3021.github.io/cloudburst/services.html", "https://stefanjovic3021.github.io/cloudburst/contact.html", "https://stefanjovic3021.github.io/cloudburst/author.html"];
+const navBarLinks = ["/cloudburst/index.html", "/cloudburst/about.html", "/cloudburst/services.html", "/cloudburst/contact.html", "/cloudburst/author.html"];
 const navBarText = ["Home", "About us", "Our services", "Contact us", "About author"];
 let navBarCode = "<ul>";
 for (let i = 0; i < navBarLinks.length; i++)
@@ -37,7 +37,7 @@ $(document).ready(function(){
     CODE BELOW WORKS ONLY IN INDEX.HTML
 */
 
-if (document.location.pathname == "https://stefanjovic3021.github.io/cloudburst/index.html")
+if (document.location.pathname == "/cloudburst/index.html")
 {
     //Dynamic Search Checkboxes
     let searchCb = document.querySelector("#checkDomains");
@@ -172,7 +172,7 @@ if (document.location.pathname == "https://stefanjovic3021.github.io/cloudburst/
     }
     featuresBody.innerHTML = featuresCode;
 }
-if (document.location.pathname == "https://stefanjovic3021.github.io/cloudburst/about.html")
+if (document.location.pathname == "/cloudburst/about.html")
 {
     let meetUsBoxBody = document.querySelector("#meetUsBoxBody");
     const profilePictures = ["/images/person1.png", "/images/person2.png", "/images/person3.png"];
@@ -195,7 +195,7 @@ if (document.location.pathname == "https://stefanjovic3021.github.io/cloudburst/
     }
     meetUsBoxBody.innerHTML = meetUsCode;
 }
-if (document.location.pathname == "https://stefanjovic3021.github.io/cloudburst/services.html")
+if (document.location.pathname == "/cloudburst/services.html")
 {
     let bestServicesBody = document.querySelector("#servicesBody");
     const bestServiceIcons = ["las la-cloud", "las la-stopwatch", "las la-compress-arrows-alt", 
@@ -226,7 +226,7 @@ if (document.location.pathname == "https://stefanjovic3021.github.io/cloudburst/
     }
     bestServicesBody.innerHTML = bestServiceCode;
 }
-if (document.location.pathname == "https://stefanjovic3021.github.io/cloudburst/contact.html")
+if (document.location.pathname == "/cloudburst/contact.html")
 {
     let contactInfoIcons = document.querySelector("#contactInfoIcons");
     const infoIcons = ["las la-phone", "las la-envelope", "las la-question", "las la-user-edit"];
