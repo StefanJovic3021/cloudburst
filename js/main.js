@@ -53,7 +53,7 @@ if (document.location.pathname == "/cloudburst/index.html")
 
     //Dynamic Customers (Trust)
     let customersContainer = document.querySelector("#customersContainer");
-    const customerLogoLocation = ["/images/unity_logo.png", "/images/Mediafire_Logo2.png", "/images/blender_logo.png", "/images/godot_logo.png"];
+    const customerLogoLocation = ["/cloudburst/images/unity_logo.png", "/cloudburst/images/Mediafire_Logo2.png", "/cloudburst/images/blender_logo.png", "/cloudburst/images/godot_logo.png"];
     let customersCode = "";
     for (let i = 0; i < customerLogoLocation.length; i++)
     {
@@ -175,7 +175,7 @@ if (document.location.pathname == "/cloudburst/index.html")
 if (document.location.pathname == "/cloudburst/about.html")
 {
     let meetUsBoxBody = document.querySelector("#meetUsBoxBody");
-    const profilePictures = ["/images/person1.png", "/images/person2.png", "/images/person3.png"];
+    const profilePictures = ["/cloudburst/images/person1.png", "/cloudburst/images/person2.png", "/cloudburst/images/person3.png"];
     const altProfileDesc = ["Image of a Customer Support Leader", "Image of a Co-Founder", "Image of a Chief Revenue Officer"];
     const personName = ["Jonathan Smart", "Mary Morris", "George White"];
     const personRole = ["Head of Customer Support", "Co-Founder", "Chief Revenue Officer"];
