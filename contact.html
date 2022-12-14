@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Title -->
+    <title>CLOUDBURST HOSTING</title>
+    <!-- Essentials -->
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="keywords" content="cloud, hosting, service, space, server, domain"/>
+    <meta name="author" content="Stefan Jović">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+    <!-- Web-Icons -->
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"/>
+    <!-- CSS (Using SASS) -->
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+</head>
+<body>
+    <header>
+        <div id="logo"><a href="index.html"><h1>CLOUDBURST HOSTING</h1></a></div>
+        <nav></nav>
+    </header>
+    <main>
+        <!-- Generic Banner Section -->
+        <section id="genericBannerContainer">
+            <div id="genericBannerTitle">
+                <h1>Contact us</h1>
+                <p>Home / <a href="#">Contact us</a></p>
+            </div>
+        </section>
+        <!-- Contact Us Section -->
+        <a name="contactForm"></a>
+        <section class="regularContainer">
+            <div id="contactContainer">
+                <div id="formHolder">
+                    <form name="contactForm" method="get">
+                        <div id="inputName">
+                            <label for="firstName">Your name: </label></br>
+                            <input type="text" id="firstName" name="FirstName" placeholder="eg. Jelena"/>
+                            <!--Error messages-->
+                            <span class="hidden">Name is not written in a right format! Please try again.</span>
+                            <span class="hidden">Name field is empty! Please fill this field with your name.</span>
+                        </div>
+                        <div id="inputEmail">
+                            <label for="email">E-mail: </label></br>
+                            <input type="email" id="email" name="Email" placeholder="eg. random.email@gmail.com"/>
+                            <!--Error messages-->
+                            <span class="hidden">E-mail is not written in a right format! Please try again. </span>
+                            <span class="hidden">E-mail is empty! Please fill this field with your e-mail adress.</span>
+                        </div>
+                        <div id="inputSubject">
+                            <label for="interestInHosting">Subject: </label></br>
+                            <div class="radioOption"><input type="radio" id="interestInHosting" name="RadioButton" value="Interest in a hosting plan"/> Interest in a hosting plan</div>
+                            <div class="radioOption"><input type="radio" id="jobApp" name="RadioButton" value="Job Application"/> Job application</div>
+                            <div class="radioOption"><input type="radio" id="otherSubject" name="RadioButton" value="Other subject"/> Other subject</div>
+                            <!--Error messages-->
+                            <span class="hidden">Subject is not selected! Please select a subject.</span>
+                        </div>
+                        <div id="inputTextArea">
+                            <label for="txtMessage">Message: </label></br>
+                            <textarea id="txtMessage" name="TxTMessage" placeholder="Your message goes here..."></textarea>
+                            <!--Error messages-->
+                            <span class="hidden">Message field is empty! Please fill in your message.</span>
+                        </div>
+                        <input type="submit" id="submitButton" value="SEND MESSAGE" />
+                        <input type="reset" id="resetButton" value="RESET MESSAGE" />
+                    </form>
+                </div>
+                <div id="contactInfoHolder">
+                    <div id="contactInfoHeader">
+                        <span>Contact us</span>
+                        <h3>Let's keep in touch</h3>
+                        <p>
+                            Quisque sagittis blandit sapien et elementum. Fusce pretium viverra consequat. 
+                            Aliquam at feugiat mi. Pellentesque hendrerit, felis ac sodales commodo.
+                        </p>
+                    </div>
+                    <div id="contactInfoIcons"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div id="footerBlock">
+            <div class="footerInfoBlock">
+                <div class="footerInfoBlockHead"><p>About us</p></div>
+                <div class="footerInfoBlockBody">
+                    <p>
+                        We were founded in 2014 by a group of hosting industry veterans. We provide access to premium server hosting 
+                        solutions in ISO 27001, ISO 9001 data centers in the US, EU countries, UK, Singapore, and Hong Kong (with 
+                        more to come online).
+                    </p>
+                </div>
+            </div>
+            <div class="footerInfoBlock">
+                <div class="footerInfoBlockHead"><p>Shortcuts</p></div>
+                <div class="footerInfoBlockBody">
+                    <ul>
+                        <li><a href="index.html#top"><p>Domain Search</p></a></li>
+                        <li><a href="index.html#hostingPlans"><p>Hosting Plans</p></a></li>
+                        <li><a href="contact.html#contactForm"><p>Contact Form</p></a></li>
+                        <li><a href="about.html#aboutUs"><p>About Us</p></a></li>
+                        <li><a href="author.html#aboutAuthor"><p>About Author</p></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footerInfoBlock">
+                <div class="footerInfoBlockHead"><p>Website info</p></div>
+                <div class="footerInfoBlockBody">
+                    <ul>
+                        <li><a href="#"><p>HTML</p></a></li>
+                        <li><a href="#"><p>CSS</p></a></li>
+                        <li><a href="#"><p>SASS</p></a></li>
+                        <li><a href="#"><p>Sitemap</p></a></li>
+                        <li><a href="#"><p>Documentation</p></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footerInfoBlock">
+                <div class="footerInfoBlockHead"><p>More information</p></div>
+                <div class="footerInfoBlockBody">
+                    <ul>
+                        <li><span>Phone: </span><p>+011 2 345 6780</p></li>
+                        <li><span>E-mail: </span><p>cloudburst&commat;cld.com</p></li>
+                        <li><span>Support: </span><p>support.cloudburst&commat;cld.com</p></li>
+                        <li><span>Author: </span><a href="author.html"><p>Stefan Jović</p></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="websiteCopyright">
+            <span>Copyright &copy; 2022 Cloubrust Hosting - Stefan Jović</span>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
