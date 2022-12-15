@@ -37,7 +37,7 @@ $(document).ready(function(){
     CODE BELOW WORKS ONLY IN INDEX.HTML
 */
 
-if (document.location.pathname == "/cloudburst/index.html" || document.location.pathname == "/cloudburst/")
+if (document.location.pathname == "/cloudburst/index.html")
 {
     //Dynamic Search Checkboxes
     let searchCb = document.querySelector("#checkDomains");
@@ -134,7 +134,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
                         <li><p><i class="las la-angle-double-right"></i>${hostingPlanAttributes[addIndex++]}</p></li>
                     </ul>
                 </div>
-                <a href="#"><div class="select-plan-button${elementMiddle[i]}"><p>SELECT PLAN</p></div></a>
+                <a href="/contact.html#contactForm"><div class="select-plan-button${elementMiddle[i]}"><p>SUBSCRIBE</p></div></a>
             </div>
         `;
     }
@@ -203,12 +203,12 @@ if (document.location.pathname == "/cloudburst/services.html")
     const bestServiceName = ["VPS Cloud", "Fast Network", "Reliable Platform", "Managed CDN", "Optimal Hosting", "Customer Support"];
     const bestServiceDesc = 
     [
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque similique repudiandae possimus quidem. Nulla quia expedita ratione, delectus cum accusamus.",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque similique repudiandae possimus quidem. Nulla quia expedita ratione, delectus cum accusamus.",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque similique repudiandae possimus quidem. Nulla quia expedita ratione, delectus cum accusamus.",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque similique repudiandae possimus quidem. Nulla quia expedita ratione, delectus cum accusamus.",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque similique repudiandae possimus quidem. Nulla quia expedita ratione, delectus cum accusamus.",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque similique repudiandae possimus quidem. Nulla quia expedita ratione, delectus cum accusamus."
+        "Our offer include Windows and Linux. With 10+ years of operation, we run cost-effective, reliable and simple to use VPS servers. All servers we offer have 100% root / administrator access.",
+        "Everyone needs stable, productive, and fast cloud servers. A fast cloud should have low DC-client and DC-DC latency, high server uplink, fast storage I/O, for example. Our cloud servers have local SSD-disks.",
+        "We aim to find smart solutions and automate routine procedures. We've come up with a cloud-like bare metal solution. Our approach combines high power and controllability of dedicated servers with cloud flexibility.",
+        "Supercharge your content delivery via a global distribution network with unparalleled speed, security, and stability. Deliver exceptional performance. For every request. Every time.",
+        "Hop on a lightning fast global content delivery network and supercharge your web presence. Deliver consistent experience to everyone, no matter where they are. Never make your users wait again.",
+        "Get in touch with our 24/7 available customer support to help you with all of your struggles and questions. On the average, our clients get the first response to their tickets in less than 15 minutes."
     ];
     let bestServiceCode = "";
     for (let i = 0; i < bestServiceName.length; i++)
