@@ -1336,6 +1336,9 @@ body footer #websiteCopyright {
     width: 20px;
     height: 20px;
   }
+  body main #customersContainer {
+    width: 100%;
+  }
   body main #featuresContainer #featuresBody {
     margin-top: 30px;
   }
