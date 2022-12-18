@@ -17,8 +17,19 @@
 </head>
 <body>
     <header>
-        <div id="logo"><a href="index.html"><h1>CLOUDBURST HOSTING</h1></a></div>
-        <nav></nav>
+        <div id="normalNavigation">
+            <div id="logo"><a href="index.html"><h1>CLOUDBURST HOSTING</h1></a></div>
+            <nav id="normalNavTag"></nav>
+        </div>
+        <div id="mobileNavigation">
+            <div id="logoMobile"><a href="index.html"><h1>CLOUDBURST HOSTING</h1></a></div>
+            <div id="hamburgerButton">
+                <i class="las la-bars"></i>
+            </div>
+            <div id="hamburgerMenu" style="display: none;">
+                <nav id="mobileNavTag"></nav>
+            </div>
+        </div>
     </header>
     <main>
         <!-- Generic Banner Section -->
@@ -108,7 +119,7 @@
                 <div class="footerInfoBlockHead"><p>Website info</p></div>
                 <div class="footerInfoBlockBody">
                     <ul>
-                        <li><a href="/cloudburst/robots.txt" download="robots"><p>Robots.txt</p></a></li>
+                        <li><a href="/robots.txt" download="robots"><p>Robots.txt</p></a></li>
                         <li><a href="#"><p>Sitemap</p></a></li>
                         <li><a href="#"><p>Documentation</p></a></li>
                     </ul>
