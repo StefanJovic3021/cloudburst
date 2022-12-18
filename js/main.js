@@ -1,5 +1,6 @@
 //Dynamic Navbar
-let navBar = document.querySelector("nav");
+let navBar = document.querySelector("#normalNavTag");
+let navBarMobile = document.querySelector("#mobileNavTag");
 const navBarLinks = ["/cloudburst/index.html", "/cloudburst/about.html", "/cloudburst/services.html", "/cloudburst/contact.html", "/cloudburst/author.html"];
 const navBarText = ["Home", "About us", "Our services", "Contact us", "About author"];
 let navBarCode = "<ul>";
@@ -17,6 +18,7 @@ for (let i = 0; i < navBarLinks.length; i++)
 navBarCode += "</ul>";
 
 navBar.innerHTML = navBarCode;
+navBarMobile.innerHTML = navBarCode;
 
 //Nav changes color on scroll
 
@@ -30,6 +32,16 @@ $(document).ready(function(){
         else{
             $("header").removeClass('navWhite');
         }
+    })
+});
+
+//Nav blurres background of whole main when hamburger menu is active
+
+$(document).ready(function(){
+    $('#hamburgerButton').click(function(){
+        $('#hamburgerMenu').toggle("fast", function(){
+            $('main').toggleClass('mobileBlur');
+        });
     })
 });
 
@@ -82,7 +94,9 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             <div class="serviceContentIcon">${serviceIcon[i]}</div>
             <div class="serviceContentName">${serviceName[i]}</div>
             <div class="serviceContentDescription">
-                ${serviceDescription[i]}
+                <p>
+                    ${serviceDescription[i]}
+                </p>
             </div>
         </div>`;
     }
@@ -164,7 +178,9 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             <div class="featureContent">
                 <div class="featureName">${featureNames[i]}</div>
                 <div class="featureDescription">
-                    ${featureDescripions[i]}
+                    <p>
+                        ${featureDescripions[i]}
+                    </p>
                 </div>
             </div>
         </div>
