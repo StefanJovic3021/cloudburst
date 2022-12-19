@@ -41,6 +41,7 @@ $(document).ready(function(){
     $('#hamburgerButton').click(function(){
         $('#hamburgerMenu').toggle("fast", function(){
             $('main').toggleClass('mobileBlur');
+            $('footer').toggleClass('mobileBlur');
         });
     })
 });
@@ -188,6 +189,9 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
     }
     featuresBody.innerHTML = featuresCode;
 }
+/*
+    CODE BELOW WORKS ONLY IN ABOUT.HTML
+*/
 if (document.location.pathname == "/cloudburst/about.html")
 {
     let meetUsBoxBody = document.querySelector("#meetUsBoxBody");
@@ -211,6 +215,9 @@ if (document.location.pathname == "/cloudburst/about.html")
     }
     meetUsBoxBody.innerHTML = meetUsCode;
 }
+/*
+    CODE BELOW WORKS ONLY IN SERVICES.HTML
+*/
 if (document.location.pathname == "/cloudburst/services.html")
 {
     let bestServicesBody = document.querySelector("#servicesBody");
@@ -242,6 +249,9 @@ if (document.location.pathname == "/cloudburst/services.html")
     }
     bestServicesBody.innerHTML = bestServiceCode;
 }
+/*
+    CODE BELOW WORKS ONLY IN CONTACT.HTML
+*/
 if (document.location.pathname == "/cloudburst/contact.html")
 {
     let contactInfoIcons = document.querySelector("#contactInfoIcons");
@@ -259,6 +269,126 @@ if (document.location.pathname == "/cloudburst/contact.html")
         `;
     }
     contactInfoIcons.innerHTML = contactInfoCode;
+
+    //Checking form
+    //REGEX
+    let fullnameRegex = /^[A-ZČĐŽŠĆ]([a-zčđžšć])+(\s){1}[A-ZČĐŽŠĆ]([a-zčđžšć])+$/;
+    let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    //CHECKING
+    let submitButton = document.getElementById("submitButton");
+    let inputName = document.getElementById("fullName");
+    let inputEmail = document.getElementById("email");
+    let inputHostingPlan = document.querySelectorAll('input[name="RadioButton"]');
+    let inputDomains = document.querySelectorAll('input[type="checkbox"');
+    let inputTextArea = document.getElementById("txtMessage");
+    submitButton.addEventListener("click", checkEverything);
+
+    function checkEverything(){
+        checkFullName();
+        checkEmail();
+        checkRadio();
+        checkBox();
+        checkTextArea();
+        if(checkFullName() && checkEmail() && checkRadio() && checkBox() && checkTextArea()){
+            console.log(checkFullName())
+            /*submitButton.removeAttribute("disabled", "disabled");
+            submitButton.classList.remove("disabledCustomButton");*/
+        }
+        else{
+            console.log(checkFullName())
+            /*submitButton.setAttribute("disabled", "disabled");
+            submitButton.classList.add("disabledCustomButton");*/
+        }
+    }
+
+    function checkFullName(){
+        let fullName = document.getElementById("fullName").value;
+        let isCorrect;
+        if(fullName.match(fullnameRegex))
+        {
+            $('#nameWrong').addClass('hidden');
+            $('#fullName').css("border", "1px solid #cdcdcd");
+            isCorrect = true;
+        }
+        else{
+            $('#nameWrong').removeClass('hidden');
+            $('#fullName').css("border", "1px solid #ff0000");
+            isCorrect = false;
+        }
+        return isCorrect;
+    }
+    function checkEmail(){
+        let emailCheck = document.getElementById("email").value;
+        let isCorrect;
+        if(emailCheck.match(emailRegex))
+        {
+            $('#emailWrong').addClass('hidden');
+            $('#email').css("border", "1px solid #cdcdcd");
+            isCorrect = true;
+        }
+        else{
+            $('#emailWrong').removeClass('hidden');
+            $('#email').css("border", "1px solid #ff0000");
+            isCorrect = false;
+        }
+        return isCorrect;
+    }
+    function checkRadio(){
+        let isCorrect;
+        for(let option of inputHostingPlan)
+        {
+            if(option.checked)
+            {
+                $('#hostingPlanEmpty').addClass('hidden');
+                $('#inputHostingPlan label').css("color", "#1E1E1E");
+                $('#inputHostingPlan input').css("accent-color", "initial");
+                isCorrect = true;
+                break;
+            }
+            else{
+                $('#hostingPlanEmpty').removeClass('hidden');
+                $('#inputHostingPlan label').css("color", "#ff0000");
+                $('#inputHostingPlan input').css("accent-color", "#ff0000");
+                isCorrect = false;
+            }
+        }
+        return isCorrect;
+    }
+    function checkBox(){
+        let isCorrect;
+        for(let domain of inputDomains)
+        {
+            if(domain.checked)
+            {
+                $('#inputDomainsEmpty').addClass('hidden');
+                $('#inputDomains input').css("accent-color", "initial");
+                isCorrect = true;
+                break;
+            }
+            else{
+                $('#inputDomainsEmpty').removeClass('hidden');
+                $('#inputDomains input').css("accent-color", "#ff0000");
+                isCorrect = false;
+            }
+        }
+        return isCorrect;
+    }
+    function checkTextArea(){
+        let isCorrect;
+        if (inputTextArea.value == "")
+        {
+            $('#inputMessageEmpty').removeClass('hidden');
+            $('#txtMessage').css("border", "1px solid #ff0000");
+            isCorrect = false;
+        }
+        else{
+            $('#inputMessageEmpty').addClass('hidden');
+            $('#txtMessage').css("border", "1px solid #cdcdcd");
+            isCorrect = true;
+        }
+        return isCorrect;
+    }
 }
 
 //Selecting context of about field
