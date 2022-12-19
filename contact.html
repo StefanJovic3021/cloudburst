@@ -18,11 +18,11 @@
 <body>
     <header>
         <div id="normalNavigation">
-            <div id="logo"><a href="/cloudburst/index.html"><h1>CLOUDBURST HOSTING</h1></a></div>
+            <div id="logo"><a href="index.html"><h1>CLOUDBURST HOSTING</h1></a></div>
             <nav id="normalNavTag"></nav>
         </div>
         <div id="mobileNavigation">
-            <div id="logoMobile"><a href="/cloudburst/index.html"><h1>CLOUDBURST HOSTING</h1></a></div>
+            <div id="logoMobile"><a href="index.html"><h1>CLOUDBURST HOSTING</h1></a></div>
             <div id="hamburgerButton">
                 <i class="las la-bars"></i>
             </div>
@@ -44,36 +44,68 @@
         <section class="regularContainer">
             <div id="contactContainer">
                 <div id="formHolder">
-                    <form name="contactForm" method="get">
+                    <form name="contactForm">
                         <div id="inputName">
-                            <label for="firstName">Your name: </label></br>
-                            <input type="text" id="firstName" name="FirstName" placeholder="eg. Jelena"/>
+                            <label for="fullName">Your name and last name: </label></br>
+                            <input type="text" id="fullName" name="FullName" placeholder="John Doe"/>
                             <!--Error messages-->
-                            <span class="hidden">Name is not written in a right format! Please try again.</span>
-                            <span class="hidden">Name field is empty! Please fill this field with your name.</span>
+                            <span id="nameWrong" class="error hidden">Name is not written in a right format. Please try again.</span>
+                            <span id="nameEmpty" class="error hidden">Name field is empty. Please fill this field with your name.</span>
                         </div>
                         <div id="inputEmail">
                             <label for="email">E-mail: </label></br>
-                            <input type="email" id="email" name="Email" placeholder="eg. random.email@gmail.com"/>
+                            <input type="email" id="email" name="Email" placeholder="johndoe@gmail.com"/>
                             <!--Error messages-->
-                            <span class="hidden">E-mail is not written in a right format! Please try again. </span>
-                            <span class="hidden">E-mail is empty! Please fill this field with your e-mail adress.</span>
+                            <span id="emailWrong" class="error hidden">E-mail is not written in a right format. Please try again. </span>
+                            <span id="emailEmpty" class="error hidden">E-mail is empty. Please fill this field with your e-mail adress.</span>
                         </div>
-                        <div id="inputSubject">
-                            <label for="interestInHosting">Subject: </label></br>
-                            <div class="radioOption"><input type="radio" id="interestInHosting" name="RadioButton" value="Interest in a hosting plan"/> Interest in a hosting plan</div>
-                            <div class="radioOption"><input type="radio" id="jobApp" name="RadioButton" value="Job Application"/> Job application</div>
-                            <div class="radioOption"><input type="radio" id="otherSubject" name="RadioButton" value="Other subject"/> Other subject</div>
+                        <div id="inputHostingPlan">
+                            <p>Hosting plans: </p></br>
+                            <div class="radioOption"><input type="radio" id="hostingPlan1" name="RadioButton" value="BASIC CLOUD 5X"/><label for="hostingPlan1"> BASIC CLOUD 5X</label></div>
+                            <div class="radioOption"><input type="radio" id="hostingPlan2" name="RadioButton" value="CLOUD VPS 10X"/><label for="hostingPlan2"> CLOUD VPS 10X</label></div>
+                            <div class="radioOption"><input type="radio" id="hostingPlan3" name="RadioButton" value="ADVANCED CLOUD"/><label for="hostingPlan3"> ADVANCED CLOUD</label></div>
                             <!--Error messages-->
-                            <span class="hidden">Subject is not selected! Please select a subject.</span>
+                            <span id="hostingPlanEmpty" class="error hidden">Hosting plan must be selected. Please select one of three options.</span>
+                        </div>
+                        <div id="inputDomains">
+                            <p>Domains: </p></br>
+                            <div id="checkBoxOptionHolder">
+                                <div class="checkboxOption"><input type="checkbox" id="domain1" name="domainCom" value="dotCom"/><label for="domain1"> .COM</label></div>
+                                <div class="checkboxOption"><input type="checkbox" id="domain2" name="domainNet" value="dotNet"/><label for="domain2"> .NET</label></div>
+                                <div class="checkboxOption"><input type="checkbox" id="domain3" name="domainOrg" value="dotOrg"/><label for="domain3"> .ORG</label></div>
+                                <div class="checkboxOption"><input type="checkbox" id="domain4" name="domainIn" value="dotIn"/><label for="domain4"> .IN</label></div>
+                            </div>
+                            <!--Error messages-->
+                            <span id="inputDomainsEmpty" class="error hidden">At least one domain must be selected. Please select one or more domains.</span>
+                        </div>
+                        <div id="inputDropdown">
+                            <p>Date of appointment: </p></br>
+                            <div id="dropdownHolder">
+                                <select name="dayDD" id="dayDD">
+                                    <option value="CHECK">DAY</option>
+                                    <option value="1">01</option>
+                                    <option value="2">02</option>
+                                    <option value="3">03</option>
+                                    <option value="4">04</option>
+                                </select>
+                                <select name="monthDD" id="monthDD">
+                                    <option value="CHECK">MONTH</option>
+                                    <option value="january">January</option>
+                                    <option value="february">February</option>
+                                    <option value="march">March</option>
+                                    <option value="april">April</option>
+                                </select>
+                            </div>
+                            <!--Error messages-->
+                            <span id="inputDateEmpty" class="error hidden">Full date must be selected. Please select a day and a month.</span>
                         </div>
                         <div id="inputTextArea">
                             <label for="txtMessage">Message: </label></br>
                             <textarea id="txtMessage" name="TxTMessage" placeholder="Your message goes here..."></textarea>
                             <!--Error messages-->
-                            <span class="hidden">Message field is empty! Please fill in your message.</span>
+                            <span id="inputMessageEmpty" class="error hidden">Message field is empty! Please fill in your message.</span>
                         </div>
-                        <input type="submit" id="submitButton" value="SEND MESSAGE" />
+                        <input type="button" id="submitButton" value="SEND MESSAGE" />
                         <input type="reset" id="resetButton" value="RESET MESSAGE" />
                     </form>
                 </div>
@@ -108,10 +140,10 @@
                 <div class="footerInfoBlockHead"><p>Shortcuts</p></div>
                 <div class="footerInfoBlockBody">
                     <ul>
-                        <li><a href="/cloudburst/index.html#top"><p>Domain Search</p></a></li>
-                        <li><a href="/cloudburst/index.html#hostingPlans"><p>Hosting Plans</p></a></li>
-                        <li><a href="/cloudburst/contact.html#contactForm"><p>Contact Form</p></a></li>
-                        <li><a href="/cloudburst/about.html#aboutUs"><p>About Us</p></a></li>
+                        <li><a href="index.html#top"><p>Domain Search</p></a></li>
+                        <li><a href="index.html#hostingPlans"><p>Hosting Plans</p></a></li>
+                        <li><a href="contact.html#contactForm"><p>Contact Form</p></a></li>
+                        <li><a href="about.html#aboutUs"><p>About Us</p></a></li>
                     </ul>
                 </div>
             </div>
@@ -132,7 +164,7 @@
                         <li><span>Phone: </span><p>+011 2 345 6780</p></li>
                         <li><span>E-mail: </span><p>cloudburst&commat;cld.com</p></li>
                         <li><span>Support: </span><p>support.cloudburst&commat;cld.com</p></li>
-                        <li><span>Author: </span><a href="/cloudburst/author.html"><p>Stefan Jović</p></a></li>
+                        <li><span>Author: </span><a href="author.html"><p>Stefan Jović</p></a></li>
                     </ul>
                 </div>
             </div>
