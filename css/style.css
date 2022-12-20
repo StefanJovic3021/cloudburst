@@ -205,6 +205,67 @@
   text-align: left;
 }
 
+.testimonialsCardsHolder {
+  display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.testimonialsCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px 30px;
+  overflow: hidden;
+  scroll-snap-align: center;
+}
+.testimonialsCard .testimonialIcon {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background-color: #0071c2;
+  border-radius: 35px;
+}
+.testimonialsCard .testimonialIcon i {
+  font-size: 50px;
+  color: #ffffff;
+}
+.testimonialsCard .testimonialQuote {
+  font-size: 22px;
+  color: #7e7e7e;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+.testimonialsCard .testimonialName p {
+  font-size: 20px;
+  color: #1E1E1E;
+}
+.testimonialsCard .testimonialName span {
+  font-size: 15px;
+  color: #0071c2;
+  font-weight: bold;
+}
+
+.buttonLeft, .buttonRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #F7F7F7;
+  box-shadow: -1px 2px 15px 0px rgba(0, 0, 0, 0.3);
+  font-size: 30px;
+  cursor: pointer;
+}
+
 .footerInfoBlock {
   display: flex;
   flex-direction: column;
@@ -529,6 +590,47 @@ body main #featuresContainer #featuresBody {
   justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 100px;
+}
+body main #testemonialsContainer {
+  width: 100%;
+  background-color: #F7F7F7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 100px 0px;
+  position: relative;
+}
+body main #testemonialsContainer #testemonialsHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+body main #testemonialsContainer #testemonialsHeader span {
+  color: #0071c2;
+  font-weight: bold;
+}
+body main #testemonialsContainer #testemonialsHeader h3 {
+  font-size: 32px;
+  color: #1E1E1E;
+  margin: 10px 0px;
+}
+body main #testemonialsContainer #testemonialsBody {
+  display: flex;
+  align-items: center;
+  width: 1000px;
+  overflow: hidden;
+  max-width: 100%;
+  overflow: hidden;
+  -ms-scroll-snap-type: both;
+      scroll-snap-type: both;
+}
+body main #testemonialsContainer #testimonialsButtons {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  width: 100%;
 }
 body main #genericBannerContainer {
   background-image: url("../images/generic_banner_background.jpg");
