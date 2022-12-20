@@ -43,8 +43,24 @@ $(document).ready(function(){
             $('main').toggleClass('mobileBlur');
             $('footer').toggleClass('mobileBlur');
         });
+        
     })
 });
+
+
+//Testimonials card sliding on click
+document.querySelector('.buttonLeft').onclick = function(){
+    console.log("CLICK-LEFT");
+    let widthItem = document.querySelector('.testimonialsCard').offsetWidth;
+    document.querySelector('#testemonialsBody').scrollLeft -= widthItem;
+}
+document.querySelector('.buttonRight').onclick = function(){
+    console.log("CLICK-RIGHT");
+    let widthItem = document.querySelector('.testimonialsCard').offsetWidth;
+    document.querySelector('#testemonialsBody').scrollLeft += widthItem;
+}
+
+
 
 /*
     CODE BELOW WORKS ONLY IN INDEX.HTML
@@ -188,6 +204,37 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
         `;
     }
     featuresBody.innerHTML = featuresCode;
+
+    //Dynamic Testimonials Section
+    let testimonialsCardsHolder = document.querySelector(".testimonialsCardsHolder");
+    const testimonialQuote = 
+    [
+        "\"These guys are a real deal! Fast, responsible and very professional work with very little complications. We recommend them form the bottom of our hearts!\"",
+        "\"The very best. I have gotten at least 50 times the value from Cloud hosting. The service was excellent.\"",
+        "\"Since I invested in Cloudburst I made over 100,000 dollars profits. I am so pleased with this product. I will recommend you to my colleagues.\""
+    ];
+    const testimonialName = ["John Riccitiello", "Jewell F.", "Elyssa Candace"];
+    const testimonialRole = ["CEO of Unity Technologies", "CEO of Blender Software", "CEO of Godot Game Engine"];
+    let testimonialsCode = "";
+    for (let i = 0; i < testimonialQuote.length; i++)
+    {
+        testimonialsCode +=
+        `
+            <div class="testimonialsCard">
+                <div class="testimonialIcon"><i class="las la-quote-right"></i></div>
+                <div class="testimonialQuote">
+                    <p>
+                       ${testimonialQuote[i]} 
+                    </p>
+                </div>
+                <div class="testimonialName">
+                    <p>${testimonialName[i]}</p>
+                    <span>${testimonialRole[i]}</span>
+                </div>
+            </div>
+        `;
+    }
+    testimonialsCardsHolder.innerHTML = testimonialsCode;
 }
 /*
     CODE BELOW WORKS ONLY IN ABOUT.HTML
