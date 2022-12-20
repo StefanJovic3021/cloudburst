@@ -47,21 +47,6 @@ $(document).ready(function(){
     })
 });
 
-
-//Testimonials card sliding on click
-document.querySelector('.buttonLeft').onclick = function(){
-    console.log("CLICK-LEFT");
-    let widthItem = document.querySelector('.testimonialsCard').offsetWidth;
-    document.querySelector('#testemonialsBody').scrollLeft -= widthItem;
-}
-document.querySelector('.buttonRight').onclick = function(){
-    console.log("CLICK-RIGHT");
-    let widthItem = document.querySelector('.testimonialsCard').offsetWidth;
-    document.querySelector('#testemonialsBody').scrollLeft += widthItem;
-}
-
-
-
 /*
     CODE BELOW WORKS ONLY IN INDEX.HTML
 */
@@ -235,6 +220,18 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
         `;
     }
     testimonialsCardsHolder.innerHTML = testimonialsCode;
+    
+    //Testimonials card sliding on click
+    document.querySelector('.buttonLeft').onclick = function(){
+    console.log("CLICK-LEFT");
+    let widthItem = document.querySelector('.testimonialsCard').offsetWidth;
+    document.querySelector('#testemonialsBody').scrollLeft -= widthItem;
+    }
+    document.querySelector('.buttonRight').onclick = function(){
+    console.log("CLICK-RIGHT");
+    let widthItem = document.querySelector('.testimonialsCard').offsetWidth;
+    document.querySelector('#testemonialsBody').scrollLeft += widthItem;
+    }
 }
 /*
     CODE BELOW WORKS ONLY IN ABOUT.HTML
