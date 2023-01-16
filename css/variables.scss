@@ -1,0 +1,23 @@
+//FONTS
+@font-face {
+    font-family: Anurati;
+    src: url('../files/fonts/Anurati-Regular.otf');
+}
+
+//MISC
+::placeholder{
+    color: #ffffffc4;
+    opacity: 1;
+}
+
+//VARIABLES
+$dark-text: #1E1E1E;
+$cool-blue: #0071c2;
+$gray-text: #7e7e7e;
+
+//MIXIN
+@mixin flexBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
