@@ -41,40 +41,6 @@ for (let i = 0; i < navlist.children.length; i++){
 let isMenuActive = false;
 navBarBehaviour();
 
-/*
-    ****************************************REVERT THIS IF U FAIL AGAIN**************************************************
-*/
-
-// //Nav changes color on scroll
-
-// $(document).ready(function(){
-//     $(window).scroll(function(){
-//         var scroll = $(window).scrollTop();
-//         if (scroll > 100) {
-//           $("header").addClass('navWhite');
-//         }
-  
-//         else{
-//             $("header").removeClass('navWhite');
-//         }
-//     })
-// });
-
-// //Nav blurres background of whole main when hamburger menu is active
-
-// $(document).ready(function(){
-//     $('#hamburgerButton').click(function(){
-//         $('#hamburgerMenu').toggle("fast", function(){
-//             $('main').toggleClass('mobileBlur');
-//             $('footer').toggleClass('mobileBlur');
-//         });
-//     })
-// });
-
-/*
-    =========================================================================================================
-*/
-
 //Nav blurres background of whole main when hamburger menu is active
 
 $(document).ready(function(){
@@ -115,7 +81,7 @@ function navBarBehaviour(){
     CODE BELOW WORKS ONLY IN INDEX.HTML
 */
 
-if (document.location.pathname == "/cloudburst/index.html")
+if (document.location.pathname == "/cloudburst/index.html" || document.location.pathname == "/cloudburst/")
 {
     //Dynamic Search Checkboxes
     let searchCb = document.querySelector("#checkDomains");
