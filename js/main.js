@@ -8,7 +8,8 @@ for (let i = 0; i < navBarLinks.length; i++)
 {
     if (document.location.pathname == navBarLinks[i])
     {
-        navBarCode += `<li><a href="${navBarLinks[i]}" class="active"><p>${navBarText[i]}</p></a></li>`;
+        //navBarCode += `<li><a href="${navBarLinks[i]}" class="active"><p>${navBarText[i]}</p></a></li>`;
+        navBarCode += `<li class="active"><a href="${navBarLinks[i]}"><p>${navBarText[i]}</p></a></li>`;
     }
     else
     {
@@ -20,38 +21,101 @@ navBarCode += "</ul>";
 navBar.innerHTML = navBarCode;
 navBarMobile.innerHTML = navBarCode;
 
-//Nav changes color on scroll
+//Nav items change color on hover
 
-$(document).ready(function(){
-    $(window).scroll(function(){
-        var scroll = $(window).scrollTop();
-        if (scroll > 100) {
-          $("header").addClass('navWhite');
-        }
+let navlist = document.querySelector('ul');
+for (let i = 0; i < navlist.children.length; i++){
+    navlist.children[i].addEventListener("mouseover", hoverOverNav);
+    navlist.children[i].addEventListener("mouseleave", hoverOutNav);
+
+    function hoverOverNav(){
+        //Changing x position of li and color of a tag
+        navlist.children[i].classList.add("hovered");
+    }
+    function hoverOutNav(){
+        //Reverting changes
+        navlist.children[i].classList.remove("hovered");
+    }
+}
+
+let isMenuActive = false;
+navBarBehaviour();
+
+/*
+    ****************************************REVERT THIS IF U FAIL AGAIN**************************************************
+*/
+
+// //Nav changes color on scroll
+
+// $(document).ready(function(){
+//     $(window).scroll(function(){
+//         var scroll = $(window).scrollTop();
+//         if (scroll > 100) {
+//           $("header").addClass('navWhite');
+//         }
   
-        else{
-            $("header").removeClass('navWhite');
-        }
-    })
-});
+//         else{
+//             $("header").removeClass('navWhite');
+//         }
+//     })
+// });
+
+// //Nav blurres background of whole main when hamburger menu is active
+
+// $(document).ready(function(){
+//     $('#hamburgerButton').click(function(){
+//         $('#hamburgerMenu').toggle("fast", function(){
+//             $('main').toggleClass('mobileBlur');
+//             $('footer').toggleClass('mobileBlur');
+//         });
+//     })
+// });
+
+/*
+    =========================================================================================================
+*/
 
 //Nav blurres background of whole main when hamburger menu is active
 
 $(document).ready(function(){
     $('#hamburgerButton').click(function(){
         $('#hamburgerMenu').toggle("fast", function(){
+            isMenuActive = !isMenuActive;
+            navBarBehaviour();
             $('main').toggleClass('mobileBlur');
             $('footer').toggleClass('mobileBlur');
         });
-        
     })
 });
+
+function navBarBehaviour(){
+    let scroll = $(window).scrollTop();
+    navBarCheck();
+    $(window).scroll(function(){
+        scroll = $(window).scrollTop();
+        navBarCheck();
+    });
+
+    function navBarCheck(){
+        if (isMenuActive || scroll > 100) {
+            $("header").addClass('navWhite');
+        }
+        else if (!(isMenuActive) && scroll < 100){
+            $("header").removeClass('navWhite');
+        }
+    }
+}
+
+
+/*
+    =========================================================================================================
+*/
 
 /*
     CODE BELOW WORKS ONLY IN INDEX.HTML
 */
 
-if (document.location.pathname == "/cloudburst/index.html" || document.location.pathname == "/cloudburst/")
+if (document.location.pathname == "/cloudburst/index.html")
 {
     //Dynamic Search Checkboxes
     let searchCb = document.querySelector("#checkDomains");
@@ -220,7 +284,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
         `;
     }
     testimonialsCardsHolder.innerHTML = testimonialsCode;
-    
+
     //Testimonials card sliding on click
     document.querySelector('.buttonLeft').onclick = function(){
     console.log("CLICK-LEFT");
@@ -238,6 +302,39 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
 */
 if (document.location.pathname == "/cloudburst/about.html")
 {
+
+    //Changing picture every 3 seconds
+    let officePictures = [
+        "/cloudburst/images/office_01.jpg",
+        "/cloudburst/images/office_02.jpg",
+        "/cloudburst/images/office_03.jpg"
+    ];
+    let officePictureIndex = 2;
+    let pictureFrameBelow = document.querySelector('#imgBelow');
+    pictureFrameBelow.src = officePictures[officePictureIndex];
+
+    setTimeout(changePicture1, 3000);
+
+    function changePicture1(){
+        setTimeout(changePicture2, 4000);
+        if (officePictureIndex >= 2) officePictureIndex = -1;
+        $('#imgAbove').fadeIn(1000);
+        setTimeout(changePictureBelow, 2000);
+    }
+    function changePicture2(){
+        setTimeout(changePicture1, 4000);
+        if (officePictureIndex >= 2) officePictureIndex = -1;
+        $('#imgAbove').fadeOut(1000);
+        setTimeout(changePictureAbove, 2000);
+    }
+    function changePictureAbove(){
+        $('#imgAbove').attr("src", officePictures[++officePictureIndex]);
+    }
+    function changePictureBelow(){
+        $('#imgBelow').attr("src", officePictures[++officePictureIndex]);
+    }
+
+    //MeetUs Dynamic
     let meetUsBoxBody = document.querySelector("#meetUsBoxBody");
     const profilePictures = ["/cloudburst/images/person1.png", "/cloudburst/images/person2.png", "/cloudburst/images/person3.png"];
     const altProfileDesc = ["Image of a Customer Support Leader", "Image of a Co-Founder", "Image of a Chief Revenue Officer"];
@@ -258,6 +355,37 @@ if (document.location.pathname == "/cloudburst/about.html")
         `;
     }
     meetUsBoxBody.innerHTML = meetUsCode;
+
+    //Selecting context of about field
+
+    let aboutContext = [
+        "We were founded in 2014 by a group of hosting industry veterans. We provide access to premium server hosting solutions in ISO 27001, ISO 9001 data centers in the US, EU countries, UK, Singapore, and Hong Kong (with more to come online). We created our hybrid cloud-ready solutions with our customers' needs in mind. Our premium enterprise hosting solutions are available to businesses of all sizes.",
+
+        "We offer two types of private cloud: Managed OpenStack installation on dedicated hardware A pool of dedicated compute nodes within our public cloud Managed OpenStack installation is highly customizable. You'll use OpenStack API and Horizon dashboard to control your cloud. A pool of dedicated compute nodes within our public cloud is slightly less flexible but is set up much faster. You'll be able to manage your dedicated resources through our customer portal or OpenStack API as if they were in the public cloud.",
+
+        "For added redundancy, we've implemented a snapshot cloud data backup system. A snapshot is a point-in-time copy of your data. With the help of snapshots, back up significant volumes of data, and this won't affect applications. Once you set the snapshot protocol parameters, it will keep backing up your data automatically."
+    ];
+
+    $(document).ready(function(){
+        $('#contextSelector ul li').parent().parent().next().children().text(aboutContext[0]);
+        $('#contextSelector ul li').hover(function(){
+            $(this).addClass('hovered');
+        },
+        function(){
+            $(this).removeClass('hovered');
+        });
+        $('#contextSelector ul li').click(function(){
+            if (!($(this).hasClass('selected'))){
+                if($(this).siblings().hasClass('selected')){
+                    $(this).siblings().removeClass('selected');
+                }
+                $(this).toggleClass('selected');
+                let selectedLi = $('#contextSelector ul li').index($('.selected'));
+                console.log(selectedLi);
+                $(this).parent().parent().next().children().text(aboutContext[selectedLi]);
+            }
+        });
+    });
 }
 /*
     CODE BELOW WORKS ONLY IN SERVICES.HTML
@@ -314,6 +442,94 @@ if (document.location.pathname == "/cloudburst/contact.html")
     }
     contactInfoIcons.innerHTML = contactInfoCode;
 
+    /*
+        DATE TIME DROPDOWN
+    */
+    let dayDropDown = document.getElementById("dayDD");
+    let monthDropDown = document.getElementById("monthDD");
+    let yearDropDown = document.getElementById("yearFDD");
+    let dateAndTime = new Date();
+    let dateYear = dateAndTime.getFullYear();
+    let dateMonth = dateAndTime.getMonth();
+    let dateDay = dateAndTime.getDate();
+    console.log(dateYear);
+    console.log(dateMonth);
+    console.log(dateDay);
+
+    
+    // MONTH PART
+    let currentMonthValue = "";
+    monthDropDown.innerHTML =
+    `
+        <option>MONTH</option>
+    `;
+    monthDropDown.addEventListener('change', function(){
+        //This function sets apropirate starting day of the month if
+        //user selects current month.
+        //Starting day will start day after the current day.
+        dayPart(dayPartMonthCheck());
+        currentMonthValue = monthDropDown.value;
+    });
+    monthDropDown.addEventListener('focus', function(){
+        //This function will disable MONTH option from selection once
+        //user clicks on dropdown.
+        monthDropDown.innerHTML =
+        `
+            <option disabled='disabled'>MONTH</option>
+        `;
+        for(let i = dateMonth + 1; i <= 12; i++){
+            monthDropDown.innerHTML +=
+            `
+                <option>${i}</option>
+            `;
+        }
+        monthDropDown.value = currentMonthValue;
+    });
+
+    dayDropDown.addEventListener('change', function(){
+        currentDayValue = dayDropDown.value;
+    });
+    dayDropDown.addEventListener('focus', function(){
+        dayPart(dayPartMonthCheck(), true);
+    });
+    function dayPart(starterDay, optDisabled = false){
+        if(optDisabled) optDisabled = `disabled= 'disabled'`;
+        else optDisabled = "";
+        dayDropDown.innerHTML =
+        `
+            <option ${optDisabled}>DAY</option>
+        `;
+        for (let i = starterDay; i < 31; i++){
+            dayDropDown.innerHTML +=
+            `
+                <option>${i}</option>
+            `;
+        }
+        if(needToChange) dayDropDown.value = starterDay;
+        else dayDropDown.value = currentDayValue;
+    }
+    function dayPartMonthCheck(){
+        needToChange = false;
+        backValue = 1;
+        if((monthDropDown.value == (dateMonth + 1))){
+            backValue = dateDay + 1;
+            needToChange = true;
+        }
+        return backValue;
+    }
+
+    //DAY PART - INITIAL
+    let currentDayValue = "DAY";
+    let needToChange = false;
+    dayPart(dayPartMonthCheck());
+    currentDayValue = "";
+
+    // YEAR PART
+    yearDropDown.innerHTML = 
+    `
+        <option>${dateYear}</option>
+    `;
+
     //Checking form
     //REGEX
     let fullnameRegex = /^[A-ZČĐŽŠĆ]([a-zčđžšć])+(\s){1}[A-ZČĐŽŠĆ]([a-zčđžšć])+$/;
@@ -329,25 +545,27 @@ if (document.location.pathname == "/cloudburst/contact.html")
     submitButton.addEventListener("click", checkEverything);
 
     function checkEverything(){
+        let finalResult;
         checkFullName();
         checkEmail();
         checkRadio();
         checkBox();
+        checkDateDropDown();
         checkTextArea();
-        if(checkFullName() && checkEmail() && checkRadio() && checkBox() && checkTextArea()){
-            console.log(checkFullName())
-            /*submitButton.removeAttribute("disabled", "disabled");
-            submitButton.classList.remove("disabledCustomButton");*/
+        if(checkFullName() && checkEmail() && checkRadio() && checkBox() && checkDateDropDown() && checkTextArea()){
+            finalResult = true;
+            console.log("Checker is:", finalResult)
+            $('#inputSucceed').removeClass('hidden');
         }
         else{
-            console.log(checkFullName())
-            /*submitButton.setAttribute("disabled", "disabled");
-            submitButton.classList.add("disabledCustomButton");*/
+            finalResult = false;
+            console.log("Checker is:", finalResult)
+            $('#inputSucceed').addClass('hidden');
         }
     }
 
     function checkFullName(){
-        let fullName = document.getElementById("fullName").value;
+        let fullName = inputName.value;
         let isCorrect;
         if(fullName.match(fullnameRegex))
         {
@@ -360,10 +578,11 @@ if (document.location.pathname == "/cloudburst/contact.html")
             $('#fullName').css("border", "1px solid #ff0000");
             isCorrect = false;
         }
+        console.log("CNAME -", isCorrect);
         return isCorrect;
     }
     function checkEmail(){
-        let emailCheck = document.getElementById("email").value;
+        let emailCheck = inputEmail.value;
         let isCorrect;
         if(emailCheck.match(emailRegex))
         {
@@ -376,6 +595,7 @@ if (document.location.pathname == "/cloudburst/contact.html")
             $('#email').css("border", "1px solid #ff0000");
             isCorrect = false;
         }
+        console.log("CMAIL -", isCorrect);
         return isCorrect;
     }
     function checkRadio(){
@@ -397,6 +617,7 @@ if (document.location.pathname == "/cloudburst/contact.html")
                 isCorrect = false;
             }
         }
+        console.log("CRADIO -", isCorrect);
         return isCorrect;
     }
     function checkBox(){
@@ -406,16 +627,38 @@ if (document.location.pathname == "/cloudburst/contact.html")
             if(domain.checked)
             {
                 $('#inputDomainsEmpty').addClass('hidden');
+                $('#inputDomains label').css("color", "#1E1E1E");
                 $('#inputDomains input').css("accent-color", "initial");
                 isCorrect = true;
                 break;
             }
             else{
                 $('#inputDomainsEmpty').removeClass('hidden');
+                $('#inputDomains label').css("color", "#ff0000");
                 $('#inputDomains input').css("accent-color", "#ff0000");
                 isCorrect = false;
             }
         }
+        console.log("CBOX -", isCorrect);
+        return isCorrect;
+    }
+    function checkDateDropDown(){
+        let isCorrect;
+        let dayOption = dayDropDown.value;
+        let monthOption = monthDropDown.value;
+        if ((dayOption == "DAY") || (monthOption == "MONTH")){
+            $('#inputDateEmpty').removeClass('hidden');
+            $('#inputDropdown select:eq(0)').css("border", "1px solid #ff0000");
+            $('#inputDropdown select:eq(1)').css("border", "1px solid #ff0000");
+            isCorrect = false;
+        }
+        else{
+            $('#inputDateEmpty').addClass('hidden');
+            $('#inputDropdown select:eq(0)').css("border", "1px solid #cdcdcd");
+            $('#inputDropdown select:eq(1)').css("border", "1px solid #cdcdcd");
+            isCorrect = true;
+        }
+        console.log("CDROP -", isCorrect);
         return isCorrect;
     }
     function checkTextArea(){
@@ -431,17 +674,17 @@ if (document.location.pathname == "/cloudburst/contact.html")
             $('#txtMessage').css("border", "1px solid #cdcdcd");
             isCorrect = true;
         }
+        console.log("CAREA -", isCorrect);
         return isCorrect;
     }
 }
-
-//Selecting context of about field
-
-$(document).ready(function(){
-    $('#contextSelector ul li').hover(function(){
-        $(this).addClass('active');
-    },
-    function(){
-        $(this).removeClass('active');
+/*
+    CODE BELOW WORKS ONLY IN AUTHOR.HTML
+*/
+if (document.location.pathname == "/cloudburst/author.html")
+{
+    $('button').hover(function(){
+        $(this).toggleClass('authorDocButtonHover');
     });
-});
+
+}
