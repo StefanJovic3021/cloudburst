@@ -41,6 +41,40 @@ for (let i = 0; i < navlist.children.length; i++){
 let isMenuActive = false;
 navBarBehaviour();
 
+/*
+    ****************************************REVERT THIS IF U FAIL AGAIN**************************************************
+*/
+
+// //Nav changes color on scroll
+
+// $(document).ready(function(){
+//     $(window).scroll(function(){
+//         var scroll = $(window).scrollTop();
+//         if (scroll > 100) {
+//           $("header").addClass('navWhite');
+//         }
+  
+//         else{
+//             $("header").removeClass('navWhite');
+//         }
+//     })
+// });
+
+// //Nav blurres background of whole main when hamburger menu is active
+
+// $(document).ready(function(){
+//     $('#hamburgerButton').click(function(){
+//         $('#hamburgerMenu').toggle("fast", function(){
+//             $('main').toggleClass('mobileBlur');
+//             $('footer').toggleClass('mobileBlur');
+//         });
+//     })
+// });
+
+/*
+    =========================================================================================================
+*/
+
 //Nav blurres background of whole main when hamburger menu is active
 
 $(document).ready(function(){
@@ -83,6 +117,181 @@ function navBarBehaviour(){
 
 if (document.location.pathname == "/cloudburst/index.html" || document.location.pathname == "/cloudburst/")
 {
+    //Domain poput window
+    let resultsContainer = document.getElementById("resultsContainer");
+    $('#submitID').click(function(){
+        resultsContainer.innerHTML = "";
+        event.preventDefault();
+        domainLoadData();
+        document.querySelector("body").style.overflowY = "hidden";
+        document.getElementById("domainPopupContainer").style.visibility = "visible";
+    });
+    $('#domainPopupClose').click(function(){
+        document.querySelector("body").style.overflowY = "auto";
+        document.getElementById("domainPopupContainer").style.visibility = "hidden";
+    });
+
+    function domainLoadData(){
+        let searchText = document.getElementById("domainID").value;
+        document.getElementById("domainPopupHeader").childNodes[1].textContent = "Search results for: " + searchText;
+        let check = 0;
+        for (let i = 0; i < domains.length; i++){
+            if (searchText == domains[i].domainName.substr(0, domains[i].domainName.length-4)){
+                check = 1;
+            }
+        }
+        if (check != 0){
+            fillDomainContainer();
+        }
+        else{
+            resultsContainer.innerHTML += 
+            `
+            <div class="resultsElement">
+                <div class="resultImage">
+                    <img src="/cloudburst/images/na_logo.png" alt="No logo available"/>
+                </div>
+                <div class="resultText">
+                    <p class="resultStatus">Status: <span class="availableDomain">Not acquired</span></p>
+                    <p class="resultName">Domain name: ${searchText}.com</p>
+                    <p>This domain is available for purchase. To make it yours, <a id="subJump" href="/cloudburst/index.html#hostingPlans">subscribe to one of our monthly plans</a>!</p>
+                </div>
+            </div>
+            `;
+            fillDomainContainer();
+            
+            let subJump = document.getElementById("subJump");
+            subJump.addEventListener("click", function(){
+                document.querySelector("body").style.overflowY = "auto";
+                document.getElementById("domainPopupContainer").style.visibility = "hidden";
+            });
+        }
+        function fillDomainContainer(){
+            for (let j = 0; j < domains.length; j++){
+                if (searchText[0] == domains[j].domainName[0]){
+                    resultsContainer.innerHTML += 
+                    `
+                    <div class="resultsElement">
+                        <div class="resultImage">
+                            <img src="${domains[j].domainPicture.pictureLoc}" alt="${domains[j].domainPicture.pictureAlt}"/>
+                        </div>
+                        <div class="resultText">
+                            <p class="resultStatus">Status: <span class="takenDomain">${domains[j].domainStatus}</span></p>
+                            <p class="resultName">Domain name: ${domains[j].domainName}</p>
+                            <p class="resultCompany">Company name: ${domains[j].domainCompany}</p>
+                            <p class="resultDate">Date acquired: ${domains[j].domainDate}</p>
+                        </div>
+                    </div>
+                    `;
+                }
+            }
+        }
+    }
+
+    //DomainsArray
+    const domains = [
+        {
+            "domainName": "google.com",
+            "domainCompany": "Google",
+            "domainStatus": "Acquired",
+            "domainDate": "15.09.1997.",
+            "domainPicture": {
+                    "pictureLoc": "/cloudburst/images/google_logo.png",
+                    "pictureAlt": "Google logo"
+            }
+            
+        },
+        {
+            "domainName": "firefox.com",
+            "domainCompany": "Mozilla Firefox",
+            "domainStatus": "Acquired",
+            "domainDate": "15.09.1998.",
+            "domainPicture": {
+                    "pictureLoc": "/cloudburst/images/firefox_logo.png",
+                    "pictureAlt": "Firefox logo"
+            }
+        },
+        {
+            "domainName": "facebook.com",
+            "domainCompany": "Meta",
+            "domainStatus": "Acquired",
+            "domainDate": "06.11.2000.",
+            "domainPicture": {
+                    "pictureLoc": "/cloudburst/images/facebook_logo.png",
+                    "pictureAlt": "Facebook logo"
+            }
+        },
+        {
+            "domainName": "twitter.com",
+            "domainCompany": "Twitter Inc.",
+            "domainStatus": "Acquired",
+            "domainDate": "06.11.2012.",
+            "domainPicture": {
+                    "pictureLoc": "/cloudburst/images/twitter_logo.png",
+                    "pictureAlt": "Twitter logo"
+            }
+        },
+        {
+            "domainName": "instagram.com",
+            "domainCompany": "Meta",
+            "domainStatus": "Acquired",
+            "domainDate": "06.11.2010.",
+            "domainPicture": {
+                    "pictureLoc": "/cloudburst/images/instagram_logo.png",
+                    "pictureAlt": "Instagram logo"
+            }
+        },
+        {
+            "domainName": "amazon.com",
+            "domainCompany": "Amazon",
+            "domainStatus": "Acquired",
+            "domainDate": "06.11.2006.",
+            "domainPicture": {
+                    "pictureLoc": "/cloudburst/images/amazon_logo.png",
+                    "pictureAlt": "Amazon logo"
+            }
+        },
+        {
+            "domainName": "aliexpress.com",
+            "domainCompany": "the Alibaba Group",
+            "domainStatus": "Acquired",
+            "domainDate": "06.11.2011.",
+            "domainPicture": {
+                    "pictureLoc": "/cloudburst/images/aliexpress_logo.png",
+                    "pictureAlt": "AliExpress logo"
+            }
+        },
+        {
+            "domainName": "netflix.com",
+            "domainCompany": "Netflix",
+            "domainStatus": "Acquired",
+            "domainDate": "06.11.2009.",
+            "domainPicture": {
+                    "pictureLoc": "/cloudburst/images/netflix_logo.png",
+                    "pictureAlt": "Netflix logo"
+            }
+        },
+        {
+            "domainName": "tagap.net",
+            "domainCompany": "Penguin DT",
+            "domainStatus": "Acquired",
+            "domainDate": "06.11.2009.",
+            "domainPicture": {
+                    "pictureLoc": "/cloudburst/images/tagap_logo.png",
+                    "pictureAlt": "TAGAP logo"
+            }
+        },
+        {
+            "domainName": "youtube.com",
+            "domainCompany": "Google",
+            "domainStatus": "Acquired",
+            "domainDate": "06.11.2008.",
+            "domainPicture": {
+                    "pictureLoc": "/cloudburst/images/youtube_logo.png",
+                    "pictureAlt": "Youtube logo"
+            }
+        },
+    ];
+
     //Dynamic Search Checkboxes
     let searchCb = document.querySelector("#checkDomains");
     const searchCbIds = ["domain-com", "domain-net", "domain-org", "domain-in"];
@@ -180,7 +389,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
                         <li><p><i class="las la-angle-double-right"></i>${hostingPlanAttributes[addIndex++]}</p></li>
                     </ul>
                 </div>
-                <a href="/contact.html#contactForm"><div class="select-plan-button${elementMiddle[i]}"><p>SUBSCRIBE</p></div></a>
+                <a href="/cloudburst/contact.html#contactForm"><div class="select-plan-button${elementMiddle[i]}"><p>SUBSCRIBE</p></div></a>
             </div>
         `;
     }
