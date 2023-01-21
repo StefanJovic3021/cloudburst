@@ -123,6 +123,10 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
         resultsContainer.innerHTML = "";
         event.preventDefault();
         domainLoadData();
+        $('#subJump').click(function(){
+            document.querySelector("body").style.overflowY = "auto";
+            document.getElementById("domainPopupContainer").style.visibility = "hidden";
+        });
         document.querySelector("body").style.overflowY = "hidden";
         document.getElementById("domainPopupContainer").style.visibility = "visible";
     });
@@ -134,40 +138,35 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
     function domainLoadData(){
         let searchText = document.getElementById("domainID").value;
         document.getElementById("domainPopupHeader").childNodes[1].textContent = "Search results for: " + searchText;
+        let skipperIndex = 0;
+        let skipper = [];
         let check = 0;
         for (let i = 0; i < domains.length; i++){
-            if (searchText == domains[i].domainName.substr(0, domains[i].domainName.length-4)){
+            if (searchText == domains[i].domainName.substr(0, domains[i].domainName.length - 4)){
                 check = 1;
             }
         }
-        if (check != 0){
-            fillDomainContainer();
-        }
-        else{
+        if (check == 0){
             resultsContainer.innerHTML += 
             `
             <div class="resultsElement">
                 <div class="resultImage">
-                    <img src="/cloudburst/images/na_logo.png" alt="No logo available"/>
+                    <img src="images/na_logo.png" alt="No logo available"/>
                 </div>
                 <div class="resultText">
                     <p class="resultStatus">Status: <span class="availableDomain">Not acquired</span></p>
                     <p class="resultName">Domain name: ${searchText}.com</p>
-                    <p>This domain is available for purchase. To make it yours, <a id="subJump" href="/cloudburst/index.html#hostingPlans">subscribe to one of our monthly plans</a>!</p>
+                    <p>This domain is available for purchase. To make it yours, <a id="subJump" href="index.html#hostingPlans">subscribe to one of our monthly plans</a>!</p>
                 </div>
             </div>
             `;
-            fillDomainContainer();
-            
-            let subJump = document.getElementById("subJump");
-            subJump.addEventListener("click", function(){
-                document.querySelector("body").style.overflowY = "auto";
-                document.getElementById("domainPopupContainer").style.visibility = "hidden";
-            });
         }
-        function fillDomainContainer(){
+        for (let i = 0; i < searchText.length; i++){
             for (let j = 0; j < domains.length; j++){
-                if (searchText[0] == domains[j].domainName[0]){
+                if (skipper.includes(j)){
+                    continue;
+                }
+                if (domains[j].domainName.substring(0, domains[j].domainName.length - 4).includes(searchText.substring(0, searchText.length - i))){
                     resultsContainer.innerHTML += 
                     `
                     <div class="resultsElement">
@@ -182,6 +181,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
                         </div>
                     </div>
                     `;
+                    skipper[skipperIndex++] = j;
                 }
             }
         }
