@@ -175,6 +175,10 @@
   background-color: #0071c2;
   padding: 20px;
 }
+.plan a:hover {
+  transition: 0.1s;
+  transform: scale(1.05);
+}
 .plan .elementMiddle {
   background-image: linear-gradient(to right bottom, #042439, #042841, #052d48, #073150, #0a3658, #093a5d, #083e61, #064266, #024768, #014b6a, #03506b, #08546c);
 }
@@ -276,6 +280,17 @@
   box-shadow: -1px 2px 15px 0px rgba(0, 0, 0, 0.3);
   font-size: 30px;
   cursor: pointer;
+}
+
+.buttonLeft:hover, .buttonRight:hover {
+  transition: 0.1s;
+  background-color: rgba(0, 113, 194, 0.4862745098);
+  transform: scale(1.1);
+}
+
+.buttonLeft:active, .buttonRight:active {
+  background-color: rgba(0, 113, 194, 0.8392156863);
+  transform: scale(0.9);
 }
 
 .footerInfoBlock {
@@ -425,7 +440,6 @@
   margin: 2px 0px;
 }
 .resultsElement .resultText #subJump {
-  text-decoration: none;
   color: #0071c2;
 }
 
@@ -565,6 +579,30 @@ body main {
   */
   transition: 0.4s;
   /*
+  #trustContainer{
+      width: 100%;
+      background-color: #F7F7F7;
+      @include flexBox();
+      flex-direction: column;
+      padding: 50px 20px;
+      p{
+          color: $dark-text;
+          font-weight: bold;
+          font-size: 17px;
+          margin-bottom: 20px;
+      }
+      #customersContainer{
+          @include flexBox();
+          .customer{
+              margin: 0px 50px;
+              width: 10%;
+              img{
+                  width: 100%;
+              }
+          }
+      }
+  }*/
+  /*
       ABOUT US PAGE CODE
   */
   /*
@@ -635,26 +673,14 @@ body main #bannerContainer #domainSearchContainer #checkDomains input {
 body main #trustContainer {
   width: 100%;
   background-color: #F7F7F7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   padding: 50px 20px;
 }
 body main #trustContainer p {
+  text-align: center;
   color: #1E1E1E;
   font-weight: bold;
   font-size: 17px;
   margin-bottom: 20px;
-}
-body main #trustContainer #customersContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-body main #trustContainer #customersContainer .customer {
-  margin: 0px 50px;
-  width: 10%;
 }
 body main #trustContainer #customersContainer .customer img {
   width: 100%;
@@ -760,8 +786,8 @@ body main #testemonialsContainer #testemonialsBody {
   width: 1000px;
   max-width: 100%;
   overflow: hidden;
-  -ms-scroll-snap-type: both;
-      scroll-snap-type: both;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
 }
 body main #testemonialsContainer #testimonialsButtons {
   position: absolute;
