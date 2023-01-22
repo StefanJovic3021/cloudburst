@@ -1,14 +1,12 @@
 //Dynamic Navbar
 let navBar = document.querySelector("#normalNavTag");
 let navBarMobile = document.querySelector("#mobileNavTag");
-const navBarLinks = ["/cloudburst/index.html", "/cloudburst/about.html", "/cloudburst/services.html", "/cloudburst/contact.html", "/cloudburst/author.html"];
+const navBarLinks = ["../index.html", "../about.html", "../services.html", "../contact.html", "../author.html"];
 const navBarText = ["Home", "About us", "Our services", "Contact us", "About author"];
 let navBarCode = "<ul>";
-for (let i = 0; i < navBarLinks.length; i++)
-{
+for (let i = 0; i < navBarLinks.length; i++){
     if (document.location.pathname == navBarLinks[i])
     {
-        //navBarCode += `<li><a href="${navBarLinks[i]}" class="active"><p>${navBarText[i]}</p></a></li>`;
         navBarCode += `<li class="active"><a href="${navBarLinks[i]}"><p>${navBarText[i]}</p></a></li>`;
     }
     else
@@ -41,40 +39,6 @@ for (let i = 0; i < navlist.children.length; i++){
 let isMenuActive = false;
 navBarBehaviour();
 
-/*
-    ****************************************REVERT THIS IF U FAIL AGAIN**************************************************
-*/
-
-// //Nav changes color on scroll
-
-// $(document).ready(function(){
-//     $(window).scroll(function(){
-//         var scroll = $(window).scrollTop();
-//         if (scroll > 100) {
-//           $("header").addClass('navWhite');
-//         }
-  
-//         else{
-//             $("header").removeClass('navWhite');
-//         }
-//     })
-// });
-
-// //Nav blurres background of whole main when hamburger menu is active
-
-// $(document).ready(function(){
-//     $('#hamburgerButton').click(function(){
-//         $('#hamburgerMenu').toggle("fast", function(){
-//             $('main').toggleClass('mobileBlur');
-//             $('footer').toggleClass('mobileBlur');
-//         });
-//     })
-// });
-
-/*
-    =========================================================================================================
-*/
-
 //Nav blurres background of whole main when hamburger menu is active
 
 $(document).ready(function(){
@@ -106,18 +70,14 @@ function navBarBehaviour(){
     }
 }
 
-
-/*
-    =========================================================================================================
-*/
-
 /*
     CODE BELOW WORKS ONLY IN INDEX.HTML
 */
 
-if (document.location.pathname == "/cloudburst/index.html" || document.location.pathname == "/cloudburst/")
+if (document.location.pathname == "../index.html" || document.location.pathname == "/cloudburst/")
 {
     //Domain poput window
+    
     let resultsContainer = document.getElementById("resultsContainer");
     $('#submitID').click(function(){
         resultsContainer.innerHTML = "";
@@ -151,12 +111,12 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             `
             <div class="resultsElement">
                 <div class="resultImage">
-                    <img src="images/na_logo.png" alt="No logo available"/>
+                    <img src="../images/na_logo.png" alt="No logo available"/>
                 </div>
                 <div class="resultText">
                     <p class="resultStatus">Status: <span class="availableDomain">Not acquired</span></p>
                     <p class="resultName">Domain name: ${searchText}.com</p>
-                    <p>This domain is available for purchase. To make it yours, <a id="subJump" href="index.html#hostingPlans">subscribe to one of our monthly plans</a>!</p>
+                    <p>This domain is available for purchase. To make it yours, <a id="subJump" href="../index.html#hostingPlans">subscribe to one of our monthly plans</a>!</p>
                 </div>
             </div>
             `;
@@ -195,7 +155,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainStatus": "Acquired",
             "domainDate": "15.09.1997.",
             "domainPicture": {
-                    "pictureLoc": "/cloudburst/images/google_logo.png",
+                    "pictureLoc": "images/google_logo.png",
                     "pictureAlt": "Google logo"
             }
             
@@ -206,7 +166,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainStatus": "Acquired",
             "domainDate": "15.09.1998.",
             "domainPicture": {
-                    "pictureLoc": "/cloudburst/images/firefox_logo.png",
+                    "pictureLoc": "images/firefox_logo.png",
                     "pictureAlt": "Firefox logo"
             }
         },
@@ -216,7 +176,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainStatus": "Acquired",
             "domainDate": "06.11.2000.",
             "domainPicture": {
-                    "pictureLoc": "/cloudburst/images/facebook_logo.png",
+                    "pictureLoc": "images/facebook_logo.png",
                     "pictureAlt": "Facebook logo"
             }
         },
@@ -226,7 +186,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainStatus": "Acquired",
             "domainDate": "06.11.2012.",
             "domainPicture": {
-                    "pictureLoc": "/cloudburst/images/twitter_logo.png",
+                    "pictureLoc": "images/twitter_logo.png",
                     "pictureAlt": "Twitter logo"
             }
         },
@@ -236,7 +196,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainStatus": "Acquired",
             "domainDate": "06.11.2010.",
             "domainPicture": {
-                    "pictureLoc": "/cloudburst/images/instagram_logo.png",
+                    "pictureLoc": "images/instagram_logo.png",
                     "pictureAlt": "Instagram logo"
             }
         },
@@ -246,7 +206,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainStatus": "Acquired",
             "domainDate": "06.11.2006.",
             "domainPicture": {
-                    "pictureLoc": "/cloudburst/images/amazon_logo.png",
+                    "pictureLoc": "images/amazon_logo.png",
                     "pictureAlt": "Amazon logo"
             }
         },
@@ -256,7 +216,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainStatus": "Acquired",
             "domainDate": "06.11.2011.",
             "domainPicture": {
-                    "pictureLoc": "/cloudburst/images/aliexpress_logo.png",
+                    "pictureLoc": "images/aliexpress_logo.png",
                     "pictureAlt": "AliExpress logo"
             }
         },
@@ -266,7 +226,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainStatus": "Acquired",
             "domainDate": "06.11.2009.",
             "domainPicture": {
-                    "pictureLoc": "/cloudburst/images/netflix_logo.png",
+                    "pictureLoc": "images/netflix_logo.png",
                     "pictureAlt": "Netflix logo"
             }
         },
@@ -276,7 +236,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainStatus": "Acquired",
             "domainDate": "06.11.2009.",
             "domainPicture": {
-                    "pictureLoc": "/cloudburst/images/tagap_logo.png",
+                    "pictureLoc": "images/tagap_logo.png",
                     "pictureAlt": "TAGAP logo"
             }
         },
@@ -286,10 +246,30 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainStatus": "Acquired",
             "domainDate": "06.11.2008.",
             "domainPicture": {
-                    "pictureLoc": "/cloudburst/images/youtube_logo.png",
+                    "pictureLoc": "images/youtube_logo.png",
                     "pictureAlt": "Youtube logo"
             }
         },
+        {
+            "domainName": "steam.com",
+            "domainCompany": "Valve Corporation",
+            "domainStatus": "Acquired",
+            "domainDate": "13.08.2003.",
+            "domainPicture": {
+                    "pictureLoc": "images/steam_logo.png",
+                    "pictureAlt": "Steam logo"
+            }
+        },
+        {
+            "domainName": "spotify.com",
+            "domainCompany": "Spotify",
+            "domainStatus": "Acquired",
+            "domainDate": "23.04.2006.",
+            "domainPicture": {
+                    "pictureLoc": "images/spotify_logo.png",
+                    "pictureAlt": "Spotify logo"
+            }
+        }
     ];
 
     //Dynamic Search Checkboxes
@@ -298,38 +278,87 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
     const searchCbValues = ["dot-com", "dot-net", "dot-org", "dot-in"];
     const searchCbText = [" .com (10$/yr)", " .net (10$/yr)", " .org (10$/yr)", " .in (10$/yr)"];
     let searchCbCode = "";
-    for (let i = 0; i < searchCbIds.length; i++)
-    {
+    for (let i = 0; i < searchCbIds.length; i++){
         searchCbCode += `<div><input type="checkbox" id="${searchCbIds[i]}" name="domain-name" value="${searchCbValues[i]}" />${searchCbText[i]}</div>`;
     }
     searchCb.innerHTML = searchCbCode;
 
     //Dynamic Customers (Trust)
     let customersContainer = document.querySelector("#customersContainer");
-    const customerLogoLocation = ["/cloudburst/images/unity_logo.png", "/cloudburst/images/Mediafire_Logo2.png", "/cloudburst/images/blender_logo.png", "/cloudburst/images/godot_logo.png"];
+    const customerLogoLocation = [
+        "../images/unity_logo2.png", 
+        "../images/Mediafire_Logo22.png", 
+        "../images/blender_logo2.png", 
+        "../images/godot_logo2.png"
+    ];
     let customersCode = "";
-    for (let i = 0; i < customerLogoLocation.length; i++)
-    {
+    for (let i = 0; i < customerLogoLocation.length; i++){
         customersCode += 
         `<div class="customer">
             <img src="${customerLogoLocation[i]}"/>
         </div>`;
     }
-    customersContainer.innerHTML = customersCode;
+    customersContainer.innerHTML = customersCode; 
+
+    //Trust slider default
+    $('#customersContainer').slick({
+        dots: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        speed: 1000,
+        adaptiveHeight: true,
+        arrows: false
+    });
+
+    let wndCurrentSize = window.innerWidth;
+    $(document).ready(function(){
+        wndCurrentSize = window.innerWidth;
+        trustSlider(wndCurrentSize);
+    })
+    $(window).resize(function () {
+        wndCurrentSize = window.innerWidth;
+        trustSlider(wndCurrentSize);
+    });
+
+    function trustSlider(windowWidth){
+        //Restart and update
+        $('#customersContainer').slick('unslick');
+        let numOfRows = 0;
+        if (windowWidth >= 1440){
+            numOfRows = 5;
+        }else if(windowWidth >= 1024){
+            numOfRows = 3;
+        }else if(windowWidth >= 768){
+            numOfRows = 2;
+        }else if(windowWidth >= 375){
+            numOfRows = 1;
+        }
+
+        $('#customersContainer').slick({
+            dots: true,
+            slidesToShow: numOfRows,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            speed: 1000,
+            adaptiveHeight: true,
+            arrows: false
+        });
+    }
 
     //Dynamic Services
     let servicesBody = document.querySelector("#servicesBody");
     const serviceIcon = ["<i class='las la-cloud'></i>", "<i class='las la-server'></i>", "<i class='las la-border-none'></i>"];
     const serviceName = ["10x Lighter Cloud", "Managed VPS Cloud", "Fully Dedicated"];
-    const serviceDescription = 
-    [
+    const serviceDescription = [
         "Everyone needs stable, productive, and fast cloud servers. A fast cloud should have low DC-client and DC-DC latency, high server uplink, fast storage I/O, for example. Our cloud servers have local SSD-disks. SD delivers fast I/O for applications.",
         "Our offer include Windows and Linux. With 10+ years of operation, we run cost-effective, reliable and simple to use VPS servers. All servers we offer have 100% root / administrator access. Windows VPS include Remote Desktop support.",
         "We offer high-powered dedicated servers with cloud flexibility and scalability. We can provision and deploy a dedicated bare metal server in any of our data centers in the world in 40-minutes or less. You choose the model and configuration of a server."
     ];
     let serviceCode = "";
-    for (let i = 0; i < serviceIcon.length; i++)
-    {
+    for (let i = 0; i < serviceIcon.length; i++){
         serviceCode += 
         `<div class="service">
             <div class="serviceContentIcon">${serviceIcon[i]}</div>
@@ -362,8 +391,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
     const elementMiddle = ["", " elementMiddle", ""];
     let hostingPlansCode = "";
     let addIndex = 0;
-    for (let i = 0; i < hostingPlanName.length; i++)
-    {
+    for (let i = 0; i < hostingPlanName.length; i++){
         hostingPlansCode += 
         `
             <div class="plan">
@@ -389,7 +417,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
                         <li><p><i class="las la-angle-double-right"></i>${hostingPlanAttributes[addIndex++]}</p></li>
                     </ul>
                 </div>
-                <a href="/cloudburst/contact.html#contactForm"><div class="select-plan-button${elementMiddle[i]}"><p>SUBSCRIBE</p></div></a>
+                <a href="/contact.html#contactForm"><div class="select-plan-button${elementMiddle[i]}"><p>SUBSCRIBE</p></div></a>
             </div>
         `;
     }
@@ -410,8 +438,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
         "Our free global private network connects three continents with 20 Gbps. The private network is protected on both physical and logical levels to ensure the fastest and safest data transfer."
     ];
     let featuresCode = "";
-    for (let i = 0; i < featureIcons.length; i++)
-    {
+    for (let i = 0; i < featureIcons.length; i++){
         featuresCode += 
         `
         <div class="feature">
@@ -440,8 +467,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
     const testimonialName = ["John Riccitiello", "Jewell F.", "Elyssa Candace"];
     const testimonialRole = ["CEO of Unity Technologies", "CEO of Blender Software", "CEO of Godot Game Engine"];
     let testimonialsCode = "";
-    for (let i = 0; i < testimonialQuote.length; i++)
-    {
+    for (let i = 0; i < testimonialQuote.length; i++){
         testimonialsCode +=
         `
             <div class="testimonialsCard">
@@ -462,27 +488,24 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
 
     //Testimonials card sliding on click
     document.querySelector('.buttonLeft').onclick = function(){
-    console.log("CLICK-LEFT");
-    let widthItem = document.querySelector('.testimonialsCard').offsetWidth;
-    document.querySelector('#testemonialsBody').scrollLeft -= widthItem;
+        let widthItem = document.querySelector('.testimonialsCard').offsetWidth;
+        document.querySelector('#testemonialsBody').scrollLeft -= widthItem;
     }
     document.querySelector('.buttonRight').onclick = function(){
-    console.log("CLICK-RIGHT");
-    let widthItem = document.querySelector('.testimonialsCard').offsetWidth;
-    document.querySelector('#testemonialsBody').scrollLeft += widthItem;
+        let widthItem = document.querySelector('.testimonialsCard').offsetWidth;
+        document.querySelector('#testemonialsBody').scrollLeft += widthItem;
     }
 }
 /*
     CODE BELOW WORKS ONLY IN ABOUT.HTML
 */
-if (document.location.pathname == "/cloudburst/about.html")
-{
+if (document.location.pathname == "../about.html"){
 
     //Changing picture every 3 seconds
     let officePictures = [
-        "/cloudburst/images/office_01.jpg",
-        "/cloudburst/images/office_02.jpg",
-        "/cloudburst/images/office_03.jpg"
+        "../images/office_01.jpg",
+        "../images/office_02.jpg",
+        "../images/office_03.jpg"
     ];
     let officePictureIndex = 2;
     let pictureFrameBelow = document.querySelector('#imgBelow');
@@ -511,13 +534,12 @@ if (document.location.pathname == "/cloudburst/about.html")
 
     //MeetUs Dynamic
     let meetUsBoxBody = document.querySelector("#meetUsBoxBody");
-    const profilePictures = ["/cloudburst/images/person1.png", "/cloudburst/images/person2.png", "/cloudburst/images/person3.png"];
+    const profilePictures = ["../images/person1.png", "../images/person2.png", "../images/person3.png"];
     const altProfileDesc = ["Image of a Customer Support Leader", "Image of a Co-Founder", "Image of a Chief Revenue Officer"];
     const personName = ["Jonathan Smart", "Mary Morris", "George White"];
     const personRole = ["Head of Customer Support", "Co-Founder", "Chief Revenue Officer"];
     let meetUsCode = "";
-    for (let i = 0; i < profilePictures.length; i++)
-    {
+    for (let i = 0; i < profilePictures.length; i++){
         meetUsCode += 
         `
             <div class="colleague">
@@ -565,8 +587,7 @@ if (document.location.pathname == "/cloudburst/about.html")
 /*
     CODE BELOW WORKS ONLY IN SERVICES.HTML
 */
-if (document.location.pathname == "/cloudburst/services.html")
-{
+if (document.location.pathname == "../services.html"){
     let bestServicesBody = document.querySelector("#servicesBody");
     const bestServiceIcons = ["las la-cloud", "las la-stopwatch", "las la-compress-arrows-alt", 
                           "las la-project-diagram", "las la-upload", "las la-user-check"];
@@ -581,8 +602,7 @@ if (document.location.pathname == "/cloudburst/services.html")
         "Get in touch with our 24/7 available customer support to help you with all of your struggles and questions. On the average, our clients get the first response to their tickets in less than 15 minutes."
     ];
     let bestServiceCode = "";
-    for (let i = 0; i < bestServiceName.length; i++)
-    {
+    for (let i = 0; i < bestServiceName.length; i++){
         bestServiceCode += 
         `
             <div class="service">
@@ -599,14 +619,13 @@ if (document.location.pathname == "/cloudburst/services.html")
 /*
     CODE BELOW WORKS ONLY IN CONTACT.HTML
 */
-if (document.location.pathname == "/cloudburst/contact.html")
+if (document.location.pathname == "../contact.html")
 {
     let contactInfoIcons = document.querySelector("#contactInfoIcons");
     const infoIcons = ["las la-phone", "las la-envelope", "las la-question", "las la-user-edit"];
     const infoText = ["+011 2 345 6780", "cloudburst&commat;cld.com", "support.cloudburst&commat;cld.com", "Stefan Jović"];
     let contactInfoCode = "";
-    for (let i = 0; i < infoIcons.length; i++)
-    {
+    for (let i = 0; i < infoIcons.length; i++){
         contactInfoCode += 
         `
             <div class="contactInfo">
@@ -742,8 +761,7 @@ if (document.location.pathname == "/cloudburst/contact.html")
     function checkFullName(){
         let fullName = inputName.value;
         let isCorrect;
-        if(fullName.match(fullnameRegex))
-        {
+        if(fullName.match(fullnameRegex)){
             $('#nameWrong').addClass('hidden');
             $('#fullName').css("border", "1px solid #cdcdcd");
             isCorrect = true;
@@ -759,8 +777,7 @@ if (document.location.pathname == "/cloudburst/contact.html")
     function checkEmail(){
         let emailCheck = inputEmail.value;
         let isCorrect;
-        if(emailCheck.match(emailRegex))
-        {
+        if(emailCheck.match(emailRegex)){
             $('#emailWrong').addClass('hidden');
             $('#email').css("border", "1px solid #cdcdcd");
             isCorrect = true;
@@ -777,8 +794,7 @@ if (document.location.pathname == "/cloudburst/contact.html")
         let isCorrect;
         for(let option of inputHostingPlan)
         {
-            if(option.checked)
-            {
+            if(option.checked){
                 $('#hostingPlanEmpty').addClass('hidden');
                 $('#inputHostingPlan label').css("color", "#1E1E1E");
                 $('#inputHostingPlan input').css("accent-color", "initial");
@@ -799,8 +815,7 @@ if (document.location.pathname == "/cloudburst/contact.html")
         let isCorrect;
         for(let domain of inputDomains)
         {
-            if(domain.checked)
-            {
+            if(domain.checked){
                 $('#inputDomainsEmpty').addClass('hidden');
                 $('#inputDomains label').css("color", "#1E1E1E");
                 $('#inputDomains input').css("accent-color", "initial");
@@ -838,8 +853,7 @@ if (document.location.pathname == "/cloudburst/contact.html")
     }
     function checkTextArea(){
         let isCorrect;
-        if (inputTextArea.value == "")
-        {
+        if (inputTextArea.value == ""){
             $('#inputMessageEmpty').removeClass('hidden');
             $('#txtMessage').css("border", "1px solid #ff0000");
             isCorrect = false;
@@ -856,8 +870,7 @@ if (document.location.pathname == "/cloudburst/contact.html")
 /*
     CODE BELOW WORKS ONLY IN AUTHOR.HTML
 */
-if (document.location.pathname == "/cloudburst/author.html")
-{
+if (document.location.pathname == "../author.html"){
     $('button').hover(function(){
         $(this).toggleClass('authorDocButtonHover');
     });
