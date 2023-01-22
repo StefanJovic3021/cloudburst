@@ -1,7 +1,7 @@
 //Dynamic Navbar
 let navBar = document.querySelector("#normalNavTag");
 let navBarMobile = document.querySelector("#mobileNavTag");
-const navBarLinks = ["../index.html", "../about.html", "../services.html", "../contact.html", "../author.html"];
+const navBarLinks = ["/cloudburst/index.html", "/cloudburst/about.html", "/cloudburst/services.html", "/cloudburst/contact.html", "/cloudburst/author.html"];
 const navBarText = ["Home", "About us", "Our services", "Contact us", "About author"];
 let navBarCode = "<ul>";
 for (let i = 0; i < navBarLinks.length; i++){
@@ -74,7 +74,7 @@ function navBarBehaviour(){
     CODE BELOW WORKS ONLY IN INDEX.HTML
 */
 
-if (document.location.pathname == "../index.html" || document.location.pathname == "/cloudburst/")
+if (document.location.pathname == "/cloudburst/index.html" || document.location.pathname == "/cloudburst/")
 {
     //Domain poput window
     
@@ -111,12 +111,12 @@ if (document.location.pathname == "../index.html" || document.location.pathname 
             `
             <div class="resultsElement">
                 <div class="resultImage">
-                    <img src="../images/na_logo.png" alt="No logo available"/>
+                    <img src="/cloudburst/images/na_logo.png" alt="No logo available"/>
                 </div>
                 <div class="resultText">
                     <p class="resultStatus">Status: <span class="availableDomain">Not acquired</span></p>
                     <p class="resultName">Domain name: ${searchText}.com</p>
-                    <p>This domain is available for purchase. To make it yours, <a id="subJump" href="../index.html#hostingPlans">subscribe to one of our monthly plans</a>!</p>
+                    <p>This domain is available for purchase. To make it yours, <a id="subJump" href="/cloudburst/index.html#hostingPlans">subscribe to one of our monthly plans</a>!</p>
                 </div>
             </div>
             `;
@@ -155,7 +155,7 @@ if (document.location.pathname == "../index.html" || document.location.pathname 
             "domainStatus": "Acquired",
             "domainDate": "15.09.1997.",
             "domainPicture": {
-                    "pictureLoc": "images/google_logo.png",
+                    "pictureLoc": "/cloudburst/images/google_logo.png",
                     "pictureAlt": "Google logo"
             }
             
@@ -166,7 +166,7 @@ if (document.location.pathname == "../index.html" || document.location.pathname 
             "domainStatus": "Acquired",
             "domainDate": "15.09.1998.",
             "domainPicture": {
-                    "pictureLoc": "images/firefox_logo.png",
+                    "pictureLoc": "/cloudburst/images/firefox_logo.png",
                     "pictureAlt": "Firefox logo"
             }
         },
@@ -176,7 +176,7 @@ if (document.location.pathname == "../index.html" || document.location.pathname 
             "domainStatus": "Acquired",
             "domainDate": "06.11.2000.",
             "domainPicture": {
-                    "pictureLoc": "images/facebook_logo.png",
+                    "pictureLoc": "/cloudburst/images/facebook_logo.png",
                     "pictureAlt": "Facebook logo"
             }
         },
@@ -186,7 +186,7 @@ if (document.location.pathname == "../index.html" || document.location.pathname 
             "domainStatus": "Acquired",
             "domainDate": "06.11.2012.",
             "domainPicture": {
-                    "pictureLoc": "images/twitter_logo.png",
+                    "pictureLoc": "/cloudburst/images/twitter_logo.png",
                     "pictureAlt": "Twitter logo"
             }
         },
@@ -196,7 +196,7 @@ if (document.location.pathname == "../index.html" || document.location.pathname 
             "domainStatus": "Acquired",
             "domainDate": "06.11.2010.",
             "domainPicture": {
-                    "pictureLoc": "images/instagram_logo.png",
+                    "pictureLoc": "/cloudburst/images/instagram_logo.png",
                     "pictureAlt": "Instagram logo"
             }
         },
@@ -206,7 +206,7 @@ if (document.location.pathname == "../index.html" || document.location.pathname 
             "domainStatus": "Acquired",
             "domainDate": "06.11.2006.",
             "domainPicture": {
-                    "pictureLoc": "images/amazon_logo.png",
+                    "pictureLoc": "/cloudburst/images/amazon_logo.png",
                     "pictureAlt": "Amazon logo"
             }
         },
@@ -216,7 +216,7 @@ if (document.location.pathname == "../index.html" || document.location.pathname 
             "domainStatus": "Acquired",
             "domainDate": "06.11.2011.",
             "domainPicture": {
-                    "pictureLoc": "images/aliexpress_logo.png",
+                    "pictureLoc": "/cloudburst/images/aliexpress_logo.png",
                     "pictureAlt": "AliExpress logo"
             }
         },
@@ -226,7 +226,7 @@ if (document.location.pathname == "../index.html" || document.location.pathname 
             "domainStatus": "Acquired",
             "domainDate": "06.11.2009.",
             "domainPicture": {
-                    "pictureLoc": "images/netflix_logo.png",
+                    "pictureLoc": "/cloudburst/images/netflix_logo.png",
                     "pictureAlt": "Netflix logo"
             }
         },
@@ -236,7 +236,7 @@ if (document.location.pathname == "../index.html" || document.location.pathname 
             "domainStatus": "Acquired",
             "domainDate": "06.11.2009.",
             "domainPicture": {
-                    "pictureLoc": "images/tagap_logo.png",
+                    "pictureLoc": "/cloudburst/images/tagap_logo.png",
                     "pictureAlt": "TAGAP logo"
             }
         },
@@ -246,7 +246,7 @@ if (document.location.pathname == "../index.html" || document.location.pathname 
             "domainStatus": "Acquired",
             "domainDate": "06.11.2008.",
             "domainPicture": {
-                    "pictureLoc": "images/youtube_logo.png",
+                    "pictureLoc": "/cloudburst/images/youtube_logo.png",
                     "pictureAlt": "Youtube logo"
             }
         },
@@ -256,7 +256,7 @@ if (document.location.pathname == "../index.html" || document.location.pathname 
             "domainStatus": "Acquired",
             "domainDate": "13.08.2003.",
             "domainPicture": {
-                    "pictureLoc": "images/steam_logo.png",
+                    "pictureLoc": "/cloudburst/images/steam_logo.png",
                     "pictureAlt": "Steam logo"
             }
         },
@@ -266,7 +266,7 @@ if (document.location.pathname == "../index.html" || document.location.pathname 
             "domainStatus": "Acquired",
             "domainDate": "23.04.2006.",
             "domainPicture": {
-                    "pictureLoc": "images/spotify_logo.png",
+                    "pictureLoc": "/cloudburst/images/spotify_logo.png",
                     "pictureAlt": "Spotify logo"
             }
         }
@@ -286,10 +286,10 @@ if (document.location.pathname == "../index.html" || document.location.pathname 
     //Dynamic Customers (Trust)
     let customersContainer = document.querySelector("#customersContainer");
     const customerLogoLocation = [
-        "../images/unity_logo2.png", 
-        "../images/Mediafire_Logo22.png", 
-        "../images/blender_logo2.png", 
-        "../images/godot_logo2.png"
+        "/cloudburst/images/unity_logo2.png", 
+        "/cloudburst/images/Mediafire_Logo22.png", 
+        "/cloudburst/images/blender_logo2.png", 
+        "/cloudburst/images/godot_logo2.png"
     ];
     let customersCode = "";
     for (let i = 0; i < customerLogoLocation.length; i++){
@@ -499,13 +499,13 @@ if (document.location.pathname == "../index.html" || document.location.pathname 
 /*
     CODE BELOW WORKS ONLY IN ABOUT.HTML
 */
-if (document.location.pathname == "../about.html"){
+if (document.location.pathname == "/cloudburst/about.html"){
 
     //Changing picture every 3 seconds
     let officePictures = [
-        "../images/office_01.jpg",
-        "../images/office_02.jpg",
-        "../images/office_03.jpg"
+        "/cloudburst/images/office_01.jpg",
+        "/cloudburst/images/office_02.jpg",
+        "/cloudburst/images/office_03.jpg"
     ];
     let officePictureIndex = 2;
     let pictureFrameBelow = document.querySelector('#imgBelow');
@@ -534,7 +534,7 @@ if (document.location.pathname == "../about.html"){
 
     //MeetUs Dynamic
     let meetUsBoxBody = document.querySelector("#meetUsBoxBody");
-    const profilePictures = ["../images/person1.png", "../images/person2.png", "../images/person3.png"];
+    const profilePictures = ["/cloudburst/images/person1.png", "/cloudburst/images/person2.png", "/cloudburst/images/person3.png"];
     const altProfileDesc = ["Image of a Customer Support Leader", "Image of a Co-Founder", "Image of a Chief Revenue Officer"];
     const personName = ["Jonathan Smart", "Mary Morris", "George White"];
     const personRole = ["Head of Customer Support", "Co-Founder", "Chief Revenue Officer"];
@@ -587,7 +587,7 @@ if (document.location.pathname == "../about.html"){
 /*
     CODE BELOW WORKS ONLY IN SERVICES.HTML
 */
-if (document.location.pathname == "../services.html"){
+if (document.location.pathname == "/cloudburst/services.html"){
     let bestServicesBody = document.querySelector("#servicesBody");
     const bestServiceIcons = ["las la-cloud", "las la-stopwatch", "las la-compress-arrows-alt", 
                           "las la-project-diagram", "las la-upload", "las la-user-check"];
@@ -619,7 +619,7 @@ if (document.location.pathname == "../services.html"){
 /*
     CODE BELOW WORKS ONLY IN CONTACT.HTML
 */
-if (document.location.pathname == "../contact.html")
+if (document.location.pathname == "/cloudburst/contact.html")
 {
     let contactInfoIcons = document.querySelector("#contactInfoIcons");
     const infoIcons = ["las la-phone", "las la-envelope", "las la-question", "las la-user-edit"];
@@ -870,7 +870,7 @@ if (document.location.pathname == "../contact.html")
 /*
     CODE BELOW WORKS ONLY IN AUTHOR.HTML
 */
-if (document.location.pathname == "../author.html"){
+if (document.location.pathname == "/cloudburst/author.html"){
     $('button').hover(function(){
         $(this).toggleClass('authorDocButtonHover');
     });
