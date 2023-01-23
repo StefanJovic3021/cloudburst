@@ -435,7 +435,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
                         <li><p><i class="las la-angle-double-right"></i>${hostingPlanAttributes[addIndex++]}</p></li>
                     </ul>
                 </div>
-                <a href="/contact.html#contactForm"><div class="select-plan-button${elementMiddle[i]}"><p>SUBSCRIBE</p></div></a>
+                <a href="/cloudburst/contact.html#contactForm"><div class="select-plan-button${elementMiddle[i]}"><p>SUBSCRIBE</p></div></a>
             </div>
         `;
     }
