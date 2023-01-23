@@ -551,26 +551,74 @@ if (document.location.pathname == "/cloudburst/about.html"){
     }
 
     //MeetUs Dynamic
-    let meetUsBoxBody = document.querySelector("#meetUsBoxBody");
-    const profilePictures = ["/cloudburst/images/person1.png", "/cloudburst/images/person2.png", "/cloudburst/images/person3.png"];
-    const altProfileDesc = ["Image of a Customer Support Leader", "Image of a Co-Founder", "Image of a Chief Revenue Officer"];
-    const personName = ["Jonathan Smart", "Mary Morris", "George White"];
-    const personRole = ["Head of Customer Support", "Co-Founder", "Chief Revenue Officer"];
-    let meetUsCode = "";
-    for (let i = 0; i < profilePictures.length; i++){
-        meetUsCode += 
+    const colleaguesObj = [
+        {"colleagueName": "Jonathan Smart", "colleagueProfilePic": "/cloudburst/images/person1.png", "colleagueProfileAlt": "Image of a Customer Support Leader", "colleagueRole": "Head of Customer Support"},
+        {"colleagueName": "Mary Morris", "colleagueProfilePic": "/cloudburst/images/person2.png", "colleagueProfileAlt": "Image of a Co-Founder", "colleagueRole": "Co-Founder"},
+        {"colleagueName": "George White", "colleagueProfilePic": "/cloudburst/images/person3.png", "colleagueProfileAlt": "Image of a Chief Revenue Officer", "colleagueRole": "Chief Revenue Officer"}
+    ];
+
+    let meetUsBoxBelow = document.getElementById("meetUsBoxB-Below");
+    let colleagueIndex = [0, 1, 2];
+    meetUsBoxBelow.innerHTML = createColleagues(colleagueIndex[0], colleagueIndex[1], colleagueIndex[2]);
+
+    updateControls();
+
+    function createColleagues(objLeft, objMiddle, objRight){
+        let meetUsCode = 
         `
-            <div class="colleague">
-                <div class="colleagueProfilePic"><img src="${profilePictures[i]}" src="${altProfileDesc[i]}"/></div>
+            <div class="colleague inactive-colleague">
+                <div class="colleagueProfilePic"><img src="${colleaguesObj[objLeft].colleagueProfilePic}" src="${colleaguesObj[objLeft].colleagueProfileAlt}"/></div>
                 <div class="colleagueInfo">
-                    <div class="colleagueFullName"><p>${personName[i]}</p></div>
-                    <div class="colleagueRole"><span>${personRole[i]}</span></div>
+                    <div class="colleagueFullName"><p>${colleaguesObj[objLeft].colleagueName}</p></div>
+                    <div class="colleagueRole"><span>${colleaguesObj[objLeft].colleagueRole}</span></div>
+                </div>
+            </div>
+            <div class="colleague inactive-colleague">
+                <div class="colleagueProfilePic"><img src="${colleaguesObj[objRight].colleagueProfilePic}" src="${colleaguesObj[objRight].colleagueProfileAlt}"/></div>
+                <div class="colleagueInfo">
+                    <div class="colleagueFullName"><p>${colleaguesObj[objRight].colleagueName}</p></div>
+                    <div class="colleagueRole"><span>${colleaguesObj[objRight].colleagueRole}</span></div>
+                </div>
+            </div>
+            <div id="meetUsBoxB-Above">
+                <div class="colleague active-colleague">
+                    <div class="colleagueProfilePic"><img src="${colleaguesObj[objMiddle].colleagueProfilePic}" src="${colleaguesObj[objMiddle].colleagueProfileAlt}"/></div>
+                    <div class="colleagueInfo">
+                        <div class="colleagueFullName"><p>${colleaguesObj[objMiddle].colleagueName}</p></div>
+                        <div class="colleagueRole"><span>${colleaguesObj[objMiddle].colleagueRole}</span></div>
+                    </div>
+                </div>
+                <div id="meetUsButtons">
+                    <div class="buttonLeft"><i class="las la-angle-left"></i></div>
+                    <div class="buttonRight"><i class="las la-angle-right"></i></div>
                 </div>
             </div>
         `;
-    }
-    meetUsBoxBody.innerHTML = meetUsCode;
+        return meetUsCode;
+    };
 
+    function updateControls(){
+        $('.buttonLeft').click(function(){
+            console.log("Pressed LEFT");
+            colleagueIndex.unshift(colleagueIndex[2]);
+            colleagueIndex.pop();
+            meetUsBoxBelow.innerHTML = createColleagues(colleagueIndex[0], colleagueIndex[1], colleagueIndex[2]);
+            updateControls();
+        })
+        $('.buttonRight').click(function(){
+            console.log("Pressed RIGHT");
+            colleagueIndex.push(colleagueIndex[0]);
+            colleagueIndex.shift();
+            meetUsBoxBelow.innerHTML = createColleagues(colleagueIndex[0], colleagueIndex[1], colleagueIndex[2]);
+            updateControls();
+        });
+        document.addEventListener('mousedown', function(event) {
+            if (event.detail > 1) {
+              event.preventDefault();
+            }
+          }, false);
+    };
+    
     //Selecting context of about field
 
     let aboutContext = [
