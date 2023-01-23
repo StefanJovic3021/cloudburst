@@ -78,21 +78,32 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
 {
     //Domain poput window
     
+    let searchTextRegex = /^([a-z])+$/;
     let resultsContainer = document.getElementById("resultsContainer");
     $('#submitID').click(function(){
-        resultsContainer.innerHTML = "";
         event.preventDefault();
-        domainLoadData();
-        $('#subJump').click(function(){
-            document.querySelector("body").style.overflowY = "auto";
-            document.getElementById("domainPopupContainer").style.visibility = "hidden";
-        });
-        document.querySelector("body").style.overflowY = "hidden";
-        document.getElementById("domainPopupContainer").style.visibility = "visible";
-    });
-    $('#domainPopupClose').click(function(){
-        document.querySelector("body").style.overflowY = "auto";
-        document.getElementById("domainPopupContainer").style.visibility = "hidden";
+        if(document.getElementById("domainID").value.match(searchTextRegex)){
+            resultsContainer.innerHTML = "";
+            domainLoadData();
+            $('#subJump').click(function(){
+                document.querySelector("body").style.overflowY = "auto";
+                document.getElementById("domainPopupContainer").style.visibility = "hidden";
+            });
+            document.querySelector("body").style.overflowY = "hidden";
+            document.getElementById("domainPopupContainer").style.visibility = "visible";
+        }
+        else{
+            document.getElementById("domainID").value = "";
+            document.getElementById("domainID").style.backgroundColor = "rgba(255, 0, 0, 0.1)";
+            document.getElementById("domainID").placeholder = "Field empty or invalid characters";
+            document.getElementById("domainID").style.border = "1px solid #ff0000";
+            setTimeout(returnDefault, 3000);
+            function returnDefault(){
+                document.getElementById("domainID").placeholder = "eg. mycoolwebsite";
+                document.getElementById("domainID").style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+                document.getElementById("domainID").style.border = "1px solid #ffffff";
+            }
+        }
     });
 
     function domainLoadData(){
