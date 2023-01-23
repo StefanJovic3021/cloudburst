@@ -82,7 +82,8 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
     let resultsContainer = document.getElementById("resultsContainer");
     $('#submitID').click(function(){
         event.preventDefault();
-        if(document.getElementById("domainID").value.match(searchTextRegex)){
+        let domainID = document.getElementById("domainID");
+        if(domainID.value.match(searchTextRegex)){
             resultsContainer.innerHTML = "";
             domainLoadData();
             document.querySelector("body").style.overflowY = "hidden";
@@ -93,15 +94,17 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             });
         }
         else{
-            document.getElementById("domainID").value = "";
-            document.getElementById("domainID").style.backgroundColor = "rgba(255, 0, 0, 0.1)";
-            document.getElementById("domainID").placeholder = "Field empty or invalid characters";
-            document.getElementById("domainID").style.border = "1px solid #ff0000";
+            domainID.value = "";
+            domainID.placeholder = "Invalid name format";
+            domainID.classList.add("wrongDomainInput");
+            domainID.style.transform = "scale(1.05) rotate(1deg)";
+                setTimeout(function(){
+                    domainID.style.transform = "initial";
+                }, 100);
             setTimeout(returnDefault, 3000);
             function returnDefault(){
-                document.getElementById("domainID").placeholder = "eg. mycoolwebsite";
-                document.getElementById("domainID").style.backgroundColor = "rgba(255, 255, 255, 0.1)";
-                document.getElementById("domainID").style.border = "1px solid #ffffff";
+                domainID.classList.remove("wrongDomainInput");
+                domainID.placeholder = "eg. mycoolwebsite";
             }
         }
     });
