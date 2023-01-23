@@ -89,9 +89,9 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
                 document.querySelector("body").style.overflowY = "auto";
                 document.getElementById("domainPopupContainer").style.visibility = "hidden";
             });
-            document.querySelector("body").style.overflowY = "hidden";
-            document.getElementById("domainPopupContainer").style.visibility = "visible";
         }
+        document.querySelector("body").style.overflowY = "hidden";
+        document.getElementById("domainPopupContainer").style.visibility = "visible";
         else{
             document.getElementById("domainID").value = "";
             document.getElementById("domainID").style.backgroundColor = "rgba(255, 0, 0, 0.1)";
