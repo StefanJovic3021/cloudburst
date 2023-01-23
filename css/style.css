@@ -1992,6 +1992,10 @@ body footer #websiteCopyright {
     text-align: justify;
     text-justify: inter-word;
   }
+  body main #meetUsContainer #meetUsBox #meetUsBoxBody {
+    width: 100%;
+    overflow: hidden;
+  }
   body main #meetUsContainer #meetUsBox #meetUsBoxBody #meetUsBoxB-Below #meetUsBoxB-Above #meetUsButtons {
     width: 120%;
   }
