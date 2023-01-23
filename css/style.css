@@ -580,43 +580,11 @@ body #domainPopupContainer #domainPopupWindow #domainPopupFooter button:hover {
 }
 
 body main {
-  /*
-      INDEX PAGE CODE
-  */
+  /*      INDEX PAGE CODE     */
   transition: 0.4s;
-  /*
-  #trustContainer{
-      width: 100%;
-      background-color: #F7F7F7;
-      @include flexBox();
-      flex-direction: column;
-      padding: 50px 20px;
-      p{
-          color: $dark-text;
-          font-weight: bold;
-          font-size: 17px;
-          margin-bottom: 20px;
-      }
-      #customersContainer{
-          @include flexBox();
-          .customer{
-              margin: 0px 50px;
-              width: 10%;
-              img{
-                  width: 100%;
-              }
-          }
-      }
-  }*/
-  /*
-      ABOUT US PAGE CODE
-  */
-  /*
-      CONTACT US PAGE CODE
-  */
-  /*
-      ABOUT AUTHOR PAGE CODE
-  */
+  /*      ABOUT US PAGE CODE      */
+  /*      CONTACT US PAGE CODE        */
+  /*      ABOUT AUTHOR PAGE CODE      */
 }
 body main #bannerContainer {
   background-image: url("../images/newBack_compressed.jpg");
@@ -666,6 +634,17 @@ body main #bannerContainer #domainSearchContainer #searchDomain #submitID {
   padding: 10px;
   margin-left: 20px;
   cursor: pointer;
+}
+body main #bannerContainer #domainSearchContainer #searchDomain #submitID:hover {
+  transform: scale(1.02);
+  background-color: #189fff !important;
+  border: 2px solid #189fff !important;
+  transition: 0.1s;
+}
+body main #bannerContainer #domainSearchContainer #searchDomain #submitID:active {
+  transform: scale(0.98);
+  background-color: #004272 !important;
+  border: 2px solid #004272 !important;
 }
 body main #bannerContainer #domainSearchContainer #checkDomains {
   display: flex;
@@ -945,9 +924,24 @@ body main #meetUsContainer #meetUsBox #meetUsBoxHeader p {
   font-size: 16px;
   margin: 10px 0px;
 }
-body main #meetUsContainer #meetUsBox #meetUsBoxBody {
+body main #meetUsContainer #meetUsBox #meetUsBoxBody #meetUsBoxB-Below {
+  position: relative;
   display: flex;
+  align-items: center;
   justify-content: space-around;
+}
+body main #meetUsContainer #meetUsBox #meetUsBoxBody #meetUsBoxB-Below #meetUsBoxB-Above {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body main #meetUsContainer #meetUsBox #meetUsBoxBody #meetUsBoxB-Below #meetUsBoxB-Above #meetUsButtons {
+  width: 300%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 body main #meetUsContainer #meetUsBox #meetUsBoxBody .colleague {
   display: flex;
@@ -955,7 +949,7 @@ body main #meetUsContainer #meetUsBox #meetUsBoxBody .colleague {
   justify-content: center;
   flex-direction: column;
   margin: 10px;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
 }
 body main #meetUsContainer #meetUsBox #meetUsBoxBody .colleague .colleagueProfilePic {
   width: 300px;
@@ -979,6 +973,16 @@ body main #meetUsContainer #meetUsBox #meetUsBoxBody .colleague .colleagueInfo .
   padding: 5px;
   color: #0071c2;
   font-size: 15px;
+}
+body main #meetUsContainer #meetUsBox #meetUsBoxBody .active-colleague {
+  transform: scale(1);
+  opacity: 100%;
+  box-shadow: -1px 2px 15px 0px rgba(0, 0, 0, 0.15);
+}
+body main #meetUsContainer #meetUsBox #meetUsBoxBody .inactive-colleague {
+  transform: scale(0.7);
+  opacity: 60%;
+  filter: blur(2px);
 }
 body main #contactContainer {
   width: 60%;
@@ -1729,6 +1733,12 @@ body footer #websiteCopyright {
     font-size: 20px;
     margin: 10px 0px;
   }
+  body main #meetUsContainer #meetUsBox #meetUsBoxBody #meetUsBoxB-Below #meetUsBoxB-Above #meetUsButtons {
+    width: 240%;
+  }
+  body main #meetUsContainer #meetUsBox #meetUsBoxBody .inactive-colleague {
+    opacity: 50%;
+  }
   body main #contactContainer {
     width: 100%;
     display: flex;
@@ -1982,9 +1992,11 @@ body footer #websiteCopyright {
     text-align: justify;
     text-justify: inter-word;
   }
-  body main #meetUsBoxBody {
-    align-items: center;
-    flex-direction: column;
+  body main #meetUsContainer #meetUsBox #meetUsBoxBody #meetUsBoxB-Below #meetUsBoxB-Above #meetUsButtons {
+    width: 120%;
+  }
+  body main #meetUsContainer #meetUsBox #meetUsBoxBody .inactive-colleague {
+    opacity: 40%;
   }
   body main #contactContainer #formHolder {
     width: 100%;
