@@ -78,7 +78,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
 {
     //Domain poput window
     
-    let searchTextRegex = /^([a-z]{3, 63})+$/;
+    let searchTextRegex = /^([a-z]{3,36})$/;
     let resultsContainer = document.getElementById("resultsContainer");
     $('#submitID').click(function(){
         event.preventDefault();
