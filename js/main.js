@@ -302,17 +302,6 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
         }
     ];
 
-    //Dynamic Search Checkboxes
-    let searchCb = document.querySelector("#checkDomains");
-    const searchCbIds = ["domain-com", "domain-net", "domain-org", "domain-in"];
-    const searchCbValues = ["dot-com", "dot-net", "dot-org", "dot-in"];
-    const searchCbText = [" .com (10$/yr)", " .net (10$/yr)", " .org (10$/yr)", " .in (10$/yr)"];
-    let searchCbCode = "";
-    for (let i = 0; i < searchCbIds.length; i++){
-        searchCbCode += `<div><input type="checkbox" id="${searchCbIds[i]}" name="domain-name" value="${searchCbValues[i]}" />${searchCbText[i]}</div>`;
-    }
-    searchCb.innerHTML = searchCbCode;
-
     //Dynamic Customers (Trust)
     let customersContainer = document.querySelector("#customersContainer");
     const customerLogoLocation = [
