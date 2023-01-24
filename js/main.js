@@ -561,7 +561,21 @@ if (document.location.pathname == "/cloudburst/about.html"){
     let colleagueIndex = [0, 1, 2];
     meetUsBoxBelow.innerHTML = createColleagues(colleagueIndex[0], colleagueIndex[1], colleagueIndex[2]);
 
-    updateControls();
+    $('.buttonLeft').click(function(){
+        colleagueIndex.unshift(colleagueIndex[2]);
+        colleagueIndex.pop();
+        updateColleagues(colleagueIndex[0], colleagueIndex[1], colleagueIndex[2]);
+    })
+    $('.buttonRight').click(function(){
+        colleagueIndex.push(colleagueIndex[0]);
+        colleagueIndex.shift();
+        updateColleagues(colleagueIndex[0], colleagueIndex[1], colleagueIndex[2]);
+    });
+    document.addEventListener('mousedown', function(event) {
+        if (event.detail > 1) {
+          event.preventDefault();
+        }
+    }, false);
 
     function createColleagues(objLeft, objMiddle, objRight){
         let meetUsCode = 
@@ -597,27 +611,35 @@ if (document.location.pathname == "/cloudburst/about.html"){
         return meetUsCode;
     };
 
-    function updateControls(){
-        $('.buttonLeft').click(function(){
-            console.log("Pressed LEFT");
-            colleagueIndex.unshift(colleagueIndex[2]);
-            colleagueIndex.pop();
-            meetUsBoxBelow.innerHTML = createColleagues(colleagueIndex[0], colleagueIndex[1], colleagueIndex[2]);
-            updateControls();
-        })
-        $('.buttonRight').click(function(){
-            console.log("Pressed RIGHT");
-            colleagueIndex.push(colleagueIndex[0]);
-            colleagueIndex.shift();
-            meetUsBoxBelow.innerHTML = createColleagues(colleagueIndex[0], colleagueIndex[1], colleagueIndex[2]);
-            updateControls();
-        });
-        document.addEventListener('mousedown', function(event) {
-            if (event.detail > 1) {
-              event.preventDefault();
-            }
-          }, false);
-    };
+    function updateColleagues(objLeft, objMiddle, objRight){
+        let firstChild = meetUsBoxBelow.children[0];
+        firstChild.innerHTML =
+        `
+        <div class="colleagueProfilePic"><img src="${colleaguesObj[objLeft].colleagueProfilePic}" src="${colleaguesObj[objLeft].colleagueProfileAlt}"/></div>
+        <div class="colleagueInfo">
+            <div class="colleagueFullName"><p>${colleaguesObj[objLeft].colleagueName}</p></div>
+            <div class="colleagueRole"><span>${colleaguesObj[objLeft].colleagueRole}</span></div>
+        </div>
+        `;
+        let secondChild = meetUsBoxBelow.children[1];
+        secondChild.innerHTML =
+        `
+        <div class="colleagueProfilePic"><img src="${colleaguesObj[objRight].colleagueProfilePic}" src="${colleaguesObj[objRight].colleagueProfileAlt}"/></div>
+        <div class="colleagueInfo">
+            <div class="colleagueFullName"><p>${colleaguesObj[objRight].colleagueName}</p></div>
+            <div class="colleagueRole"><span>${colleaguesObj[objRight].colleagueRole}</span></div>
+        </div>
+        `;
+        let thirdChild = meetUsBoxBelow.children[2].children[0];
+        thirdChild.innerHTML =
+        `
+        <div class="colleagueProfilePic"><img src="${colleaguesObj[objMiddle].colleagueProfilePic}" src="${colleaguesObj[objMiddle].colleagueProfileAlt}"/></div>
+        <div class="colleagueInfo">
+            <div class="colleagueFullName"><p>${colleaguesObj[objMiddle].colleagueName}</p></div>
+            <div class="colleagueRole"><span>${colleaguesObj[objMiddle].colleagueRole}</span></div>
+        </div>
+        `;
+    }
     
     //Selecting context of about field
 
