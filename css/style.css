@@ -618,7 +618,7 @@ body main #bannerContainer #domainSearchContainer form {
 }
 body main #bannerContainer #domainSearchContainer #searchDomain {
   display: flex;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 body main #bannerContainer #domainSearchContainer #searchDomain #domainID {
   border: 1px solid #ffffff;
@@ -649,36 +649,10 @@ body main #bannerContainer #domainSearchContainer #searchDomain #submitID:active
   background-color: #004272 !important;
   border: 2px solid #004272 !important;
 }
-body main #bannerContainer #domainSearchContainer #domainPlanJump {
-  position: relative;
+body main #bannerContainer #domainSearchContainer #searchNote {
+  color: #F7F7F7;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-body main #bannerContainer #domainSearchContainer #domainPlanJump h3 {
-  color: #ffffff;
-  text-shadow: rgb(0, 0, 0) 4px 3px 0px;
-  font-size: 22px;
-}
-body main #bannerContainer #domainSearchContainer #domainPlanJump #animatedArrow1 {
-  color: rgb(255, 255, 255);
-}
-body main #bannerContainer #domainSearchContainer #domainPlanJump #animatedArrow2 {
-  color: rgb(0, 0, 0);
-}
-body main #bannerContainer #domainSearchContainer #domainPlanJump #animatedArrow1, body main #bannerContainer #domainSearchContainer #domainPlanJump #animatedArrow2 {
-  transition: 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px;
-  top: 35px;
-  position: absolute;
-  font-size: 60px;
-}
-body main #bannerContainer #domainSearchContainer #domainPlanJump .animatedArrow {
-  transform: translateY(50px);
+  font-size: 14px;
 }
 body main #trustContainer {
   width: 100%;
@@ -1903,6 +1877,9 @@ body footer #websiteCopyright {
   }
   body main #bannerContainer #domainSearchContainer h2 {
     font-size: 32px;
+  }
+  body main #bannerContainer #domainSearchContainer form {
+    width: 90%;
   }
   body main #bannerContainer #domainSearchContainer #searchDomain #domainID {
     padding: 6px;
