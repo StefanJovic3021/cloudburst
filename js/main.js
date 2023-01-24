@@ -76,13 +76,25 @@ function navBarBehaviour(){
 
 if (document.location.pathname == "/cloudburst/index.html" || document.location.pathname == "/cloudburst/")
 {
+    //Random placeholders
+    const randomPlaceholders = [
+        "mycoolwebsite", "imverycreative", "bookoffaces", "wewillrockyou", "wingsoffreedom", "spaceiscool", "pineapplepizza", "staggeringbeauty"
+    ];
+
+    function placeholderGenerator(){
+        return randomPlaceholders[(Math.floor(Math.random()*randomPlaceholders.length))];
+    }
+
     //Domain poput window
-    
     let searchTextRegex = /^([a-z]{3,36})$/;
     let resultsContainer = document.getElementById("resultsContainer");
+    let domainID = document.getElementById("domainID");
+    setInterval(function(){
+        domainID.placeholder = "eg. " + placeholderGenerator();
+    }, 8000);
     $('#submitID').click(function(){
         event.preventDefault();
-        let domainID = document.getElementById("domainID");
+        domainID = document.getElementById("domainID");
         if(domainID.value.match(searchTextRegex)){
             resultsContainer.innerHTML = "";
             domainLoadData();
@@ -104,7 +116,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             setTimeout(returnDefault, 3000);
             function returnDefault(){
                 domainID.classList.remove("wrongDomainInput");
-                domainID.placeholder = "eg. mycoolwebsite";
+                domainID.placeholder = "eg. " + placeholderGenerator();
             }
         }
     });
@@ -202,7 +214,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainName": "twitter.com",
             "domainCompany": "Twitter Inc.",
             "domainStatus": "Acquired",
-            "domainDate": "06.11.2012.",
+            "domainDate": "08.12.2012.",
             "domainPicture": {
                     "pictureLoc": "/cloudburst/images/twitter_logo.png",
                     "pictureAlt": "Twitter logo"
@@ -212,7 +224,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainName": "instagram.com",
             "domainCompany": "Meta",
             "domainStatus": "Acquired",
-            "domainDate": "06.11.2010.",
+            "domainDate": "08.05.2010.",
             "domainPicture": {
                     "pictureLoc": "/cloudburst/images/instagram_logo.png",
                     "pictureAlt": "Instagram logo"
@@ -222,7 +234,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainName": "amazon.com",
             "domainCompany": "Amazon",
             "domainStatus": "Acquired",
-            "domainDate": "06.11.2006.",
+            "domainDate": "11.10.2006.",
             "domainPicture": {
                     "pictureLoc": "/cloudburst/images/amazon_logo.png",
                     "pictureAlt": "Amazon logo"
@@ -232,7 +244,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainName": "aliexpress.com",
             "domainCompany": "the Alibaba Group",
             "domainStatus": "Acquired",
-            "domainDate": "06.11.2011.",
+            "domainDate": "12.03.2011.",
             "domainPicture": {
                     "pictureLoc": "/cloudburst/images/aliexpress_logo.png",
                     "pictureAlt": "AliExpress logo"
@@ -242,7 +254,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainName": "netflix.com",
             "domainCompany": "Netflix",
             "domainStatus": "Acquired",
-            "domainDate": "06.11.2009.",
+            "domainDate": "06.03.2009.",
             "domainPicture": {
                     "pictureLoc": "/cloudburst/images/netflix_logo.png",
                     "pictureAlt": "Netflix logo"
@@ -252,7 +264,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainName": "tagap.net",
             "domainCompany": "Penguin DT",
             "domainStatus": "Acquired",
-            "domainDate": "06.11.2009.",
+            "domainDate": "12.05.2009.",
             "domainPicture": {
                     "pictureLoc": "/cloudburst/images/tagap_logo.png",
                     "pictureAlt": "TAGAP logo"
@@ -262,7 +274,7 @@ if (document.location.pathname == "/cloudburst/index.html" || document.location.
             "domainName": "youtube.com",
             "domainCompany": "Google",
             "domainStatus": "Acquired",
-            "domainDate": "06.11.2008.",
+            "domainDate": "23.02.2008.",
             "domainPicture": {
                     "pictureLoc": "/cloudburst/images/youtube_logo.png",
                     "pictureAlt": "Youtube logo"
