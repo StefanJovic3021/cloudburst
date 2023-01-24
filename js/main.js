@@ -814,7 +814,7 @@ if (document.location.pathname == "/cloudburst/contact.html")
 
     //Checking form
     //REGEX
-    let fullnameRegex = /^[A-ZČĐŽŠĆ]([a-zčđžšć])+(\s){1}[A-ZČĐŽŠĆ]([a-zčđžšć])+$/;
+    let fullnameRegex = /^[A-ZČĐŽŠĆ]([a-zčđžšć])+(\s){1}[A-ZČĐŽŠĆ]([a-zčđžšć])+((\s){1}[A-ZČĐŽŠĆ]([a-zčđžšć])+)*$/;
     let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     //CHECKING
